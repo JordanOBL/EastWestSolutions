@@ -1,0 +1,20 @@
+[
+  {
+    "category": "Career Development",
+    "reviewer": "Alice Johnson",
+    "content": "The career coaching helped me land my dream job in tech! Highly recommend.",
+    "avatar": "/avatars/alice.jpg"
+  },
+  {
+    "category": "Management Consulting",
+    "reviewer": "David Miller",
+    "content": "Their management consulting transformed how we handle operations. Exceptional insights!",
+    "avatar": "/avatars/david.jpg"
+  },
+  {
+    "category": "Strategy & Planning",
+    "reviewer": "Sophia Lee",
+    "content": "Their strategic planning workshop set our business on a path to success. 10/10 service!",
+    "avatar": "/avatars/sophia.jpg"
+  }
+]

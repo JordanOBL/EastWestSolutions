@@ -1,5 +1,6 @@
-'use client'; // Ensures this is client-side only
+'use client';
 
+import Link from 'next/link';
 import { Link as ScrollLink } from 'react-scroll';
 import { useState } from 'react';
 
@@ -8,37 +9,54 @@ export default function ServicesDropdown() {
 
 	return (
 		<div
-			className="relative group cursor-pointer"
+			className="relative hidden md:block"
 			onMouseEnter={() => setDropdownOpen(true)}
 			onMouseLeave={() => setDropdownOpen(false)}>
-			{/* Clickable Scroll Link */}
+			{/* Clicking "Services" scrolls down */}
 			<ScrollLink
 				to="services"
 				smooth={true}
 				duration={500}
-				className=" text-xl font-bold text-black  hover:text-blue-500"
-				onClick={() => setDropdownOpen(false)}>
-				Services
+				className="text-xl font-bold text-black hover:text-blue-500 cursor-pointer flex items-center">
+				<span>Services</span>
+				<svg
+					className="w-4 h-4 ml-1"
+					viewBox="0 0 20 20"
+					fill="currentColor">
+					<path
+						fillRule="evenodd"
+						d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+						clipRule="evenodd"
+					/>
+				</svg>
 			</ScrollLink>
 
-			{/* Dropdown Menu */}
+			{/* Dropdown Menu appears on hover */}
 			{dropdownOpen && (
-				<div onMouseEnter={() => setDropdownOpen(true)} className="absolute left-0 mt-2 w-48 bg-white border rounded-md shadow-lg">
-					<a
-						href="/management-consulting"
-						className="block px-4 py-2 text-gray-700 hover:bg-gray-100">
-						Management Consulting
-					</a>
-					<a
-						href="/strategy-planning"
-						className="block px-4 py-2 text-gray-700 hover:bg-gray-100">
-						Strategy & Planning
-					</a>
-					<a
-						href="/career-development"
-						className="block px-4 py-2 text-gray-700 hover:bg-gray-100">
-						Career Development
-					</a>
+				<div className="absolute left-0 mt-2 w-56 bg-white border rounded-md shadow-lg z-50">
+					<ul className="py-2">
+						<li>
+							<Link
+								href="/management-consulting"
+								className="block px-4 py-2 text-gray-800 hover:bg-gray-100">
+								Management Consulting
+							</Link>
+						</li>
+						<li>
+							<Link
+								href="/strategy-planning"
+								className="block px-4 py-2 text-gray-800 hover:bg-gray-100">
+								Strategy & Planning
+							</Link>
+						</li>
+						<li>
+							<Link
+								href="/career-development"
+								className="block px-4 py-2 text-gray-800 hover:bg-gray-100">
+								Career Development
+							</Link>
+						</li>
+					</ul>
 				</div>
 			)}
 		</div>
