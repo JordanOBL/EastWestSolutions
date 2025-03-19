@@ -1,19 +1,9 @@
 import "./globals.css";
 
-import { Averia_Serif_Libre, Geist, Geist_Mono, Poppins } from "next/font/google";
+import { Averia_Serif_Libre, Poppins } from "next/font/google";
 
 import type { Metadata } from "next";
-import NavBar from "./NavBar";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+import NavBar from "./components/NavBar";
 
 const averia = Averia_Serif_Libre({
   variable: "--font-averia",

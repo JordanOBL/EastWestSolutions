@@ -11,7 +11,8 @@
   --font-sans: var(--font-averia);
   --font-mono: var(--font-poppins);
   --color-primary: #0C343C;
-  --color-secondary: #F1EDE4
+  --color-secondary: #F1EDE4;
+  --color-action:#f84406;
 }
 
 @media (prefers-color-scheme: dark) {

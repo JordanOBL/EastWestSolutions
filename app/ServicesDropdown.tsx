@@ -10,8 +10,7 @@ export default function ServicesDropdown() {
 	return (
 		<div
 			className="relative hidden md:block"
-			onMouseEnter={() => setDropdownOpen(true)}
-			onMouseLeave={() => setDropdownOpen(false)}>
+			onMouseOver={() => setDropdownOpen(true)}>
 			{/* Clicking "Services" scrolls down */}
 			<ScrollLink
 				to="services"
@@ -33,7 +32,10 @@ export default function ServicesDropdown() {
 
 			{/* Dropdown Menu appears on hover */}
 			{dropdownOpen && (
-				<div className="absolute left-0 mt-2 w-56 bg-white border rounded-md shadow-lg z-50">
+				<div
+					className="absolute left-0 mt-2 w-56 bg-white border rounded-md shadow-lg z-50"
+					onMouseOver={() => setDropdownOpen(true)}
+					onMouseLeave={() => setDropdownOpen(false)}>
 					<ul className="py-2">
 						<li>
 							<Link

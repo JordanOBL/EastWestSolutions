@@ -7,23 +7,26 @@ interface ProductProps {
 	priceId: string;
 	name: string;
 	description: string;
-	price: number;
-	features: string[];
+	fixedPrice: number;
+	minPrice?: number;
+	maxPrice?: number;
+	features: { name: string }[];
 	
 }
 
 const ProductCard: React.FC<ProductProps> = ({
-	id,
 	priceId,
 	name,
 	description,
-	price,
+	fixedPrice,
+	minPrice,
+	maxPrice,
 	features,
 }) =>
 {
 	 const handlePurchase = async () => {
 			try {
-				const res = await fetch('/api/checkout', {
+				const res = await fetch('/api/purchase', {
 					method: 'POST',
 					headers: { 'Content-Type': 'application/json' },
 					body: JSON.stringify({ productId: priceId }), // Send Stripe Price ID
@@ -39,26 +42,26 @@ const ProductCard: React.FC<ProductProps> = ({
 			}
 		};
 	return (
-		<div className="bg-white p-6 rounded-lg shadow-lg border-4 border-blue-500 flex flex-col">
+		<div className="bg-white p-6 rounded-lg shadow-lg border-4 border-primary flex flex-col">
 			<h3 className="text-xl font-semibold text-gray-900">{name}</h3>
 			<p className="text-gray-700 mt-2">{description}</p>
 
 			{/* Features List */}
 			<ul className="mt-4 text-gray-700 list-disc pl-5 space-y-2">
 				{features.map((feature, index) => (
-					<li key={index}>{feature}</li>
+					<li key={index}>{feature.name}</li>
 				))}
 			</ul>
 
 			{/* Price & Purchase Button */}
 			<div className="mt-auto">
-				<p className="text-lg font-semibold text-blue-600 mt-4">
-					${price}
+				<p className="text-lg font-semibold text-primary mt-4">
+					{fixedPrice ? '$' + fixedPrice :  (minPrice || maxPrice) ? `$${minPrice!} - $${maxPrice!}` : null}
 				</p>
 				<button
-					className="mt-4 w-full bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 transition"
+					className="mt-4 w-full bg-action text-white py-2 px-4 rounded-lg hover:bg-blue-600 transition"
 					onClick={() => handlePurchase()}>
-					Purchase
+					{fixedPrice ? "Purchase" : "Request Quote"}
 				</button>
 			</div>
 		</div>

@@ -1,9 +1,15 @@
 'use client';
 
-import ProductCard from '../components/ProductCard';
+import ProductCard from './ProductCard';
 import React from 'react';
-
-const ProductSection = ({ products}) => {
+import { StripeProduct } from '../types'
+interface Props
+{
+	products: StripeProduct[];
+}
+const ProductSection = ({ products }: Props) =>
+{
+	console.log(products[0].marketing_features)
 	return (
 		<div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
 			{products.length > 0 ? (
@@ -13,11 +19,13 @@ const ProductSection = ({ products}) => {
 						id={product.id}
 						name={product.name}
 						description={product.description}
-						price={product.default_price?.unit_amount / 100 || 0}
-						features={product.metadata?.features?.split(',') || []}
+						fixedPrice={product.default_price?.unit_amount / 100 || 0}
+						features={product.marketing_features}
 						priceId={product.default_price?.id}
+						minPrice={product.metadata.min_price || 0}
+						maxPrice={product.metadata.max_price || 0}
 						// Features from Stripe metadata
-						 // Replace with Stripe Checkout
+						// Replace with Stripe Checkout
 					/>
 				))
 			) : (

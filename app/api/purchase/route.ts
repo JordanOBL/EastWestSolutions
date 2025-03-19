@@ -1,7 +1,5 @@
 import { NextResponse } from 'next/server';
-import Stripe from 'stripe';
-
-const stripe = new Stripe('sk_test_51R33cKRWgljsp4ndn6imemHP718Y5hUWMf2zDrZho6GdF1Bsrzs76X9ew6LxaRrw3ZiTHGMA1BSXbFhetLpxqfth00DT86SMhN');
+import stripe from '../../lib/stripe';
 
 // ✅ Correct Next.js API format for App Router
 export async function POST(req: Request)

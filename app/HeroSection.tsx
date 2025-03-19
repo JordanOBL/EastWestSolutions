@@ -61,7 +61,7 @@ const HeroSection = () => {
 				</h1>
 			</div>
 
-			<span className=" relative md:text-center mt-10 font-medium text-md lg:text-2xl px-8 lg:px-20 z-50">
+			<span className=" relative md:text-center mt-10 font-medium text-md lg:text-2xl px-8 lg:px-20 z-40">
 				We help businesses and professionals
 				<span className="italic text-[#F84406]"> THRIVE </span>
 				by creating clear, actionable plans that make sense!
