@@ -1,6 +1,8 @@
 'use client'
 
 import React from 'react';
+import Link from 'next/link'
+import {handlePurchase} from '../utils/api.ts'
 
 interface ProductProps {
 	id: string;
@@ -11,6 +13,7 @@ interface ProductProps {
 	minPrice?: number;
 	maxPrice?: number;
 	features: { name: string }[];
+	service: string;
 	
 }
 
@@ -22,25 +25,29 @@ const ProductCard: React.FC<ProductProps> = ({
 	minPrice,
 	maxPrice,
 	features,
+	service,
+	tierName
 }) =>
-{
-	 const handlePurchase = async () => {
-			try {
-				const res = await fetch('/api/purchase', {
-					method: 'POST',
-					headers: { 'Content-Type': 'application/json' },
-					body: JSON.stringify({ productId: priceId }), // Send Stripe Price ID
-				});
+{ 
+	async function handlePurchase() {
+    try {
+      const res = await fetch('/api/purchase', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ productId: priceId }), // Send Stripe Price ID
+      });
 
-				const data = await res.json();
+      const data = await res.json();
+			console.log('data', data)
 
-				if (data.url) {
-					window.location.href = data.url; // Redirect to Stripe Checkout
-				}
-			} catch (error) {
-				console.error('Checkout error:', error);
-			}
-		};
+      if (data.url) {
+        window.location.href = (data.url); // Redirect to Stripe Checkout
+      }
+    } catch (error) {
+      console.error('Checkout error:', error);
+    }
+  };
+	
 	return (
 		<div className="bg-white p-6 rounded-lg shadow-lg border-4 border-primary flex flex-col">
 			<h3 className="text-xl font-semibold text-gray-900">{name}</h3>
@@ -58,11 +65,12 @@ const ProductCard: React.FC<ProductProps> = ({
 				<p className="text-lg font-semibold text-primary mt-4">
 					{fixedPrice ? '$' + fixedPrice :  (minPrice || maxPrice) ? `$${minPrice!} - $${maxPrice!}` : null}
 				</p>
-				<button
+				{fixedPrice ? (<button
 					className="mt-4 w-full bg-action text-white py-2 px-4 rounded-lg hover:bg-blue-600 transition"
-					onClick={() => handlePurchase()}>
-					{fixedPrice ? "Purchase" : "Request Quote"}
-				</button>
+					onClick={handlePurchase}>
+					Purchase
+				</button>) : <Link className="mt-4 w-full bg-action text-white py-2 px-4 rounded-lg hover:bg-blue-600 transition"
+						href={`/request-quote?service=${service}&tier=${tierName}`}> Request Quote</Link>}
 			</div>
 		</div>
 	);

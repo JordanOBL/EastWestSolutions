@@ -9,7 +9,6 @@ interface Props
 }
 const ProductSection = ({ products }: Props) =>
 {
-	console.log(products[0].marketing_features)
 	return (
 		<div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
 			{products.length > 0 ? (
@@ -24,8 +23,8 @@ const ProductSection = ({ products }: Props) =>
 						priceId={product.default_price?.id}
 						minPrice={product.metadata.min_price || 0}
 						maxPrice={product.metadata.max_price || 0}
-						// Features from Stripe metadata
-						// Replace with Stripe Checkout
+						service={product.metadata.service}
+						tierName={product.metadata.tier_name}
 					/>
 				))
 			) : (
