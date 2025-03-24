@@ -14,6 +14,8 @@ interface ProductProps {
 	maxPrice?: number;
 	features: { name: string }[];
 	service: string;
+	tierName?: string;
+	tierNum?: number
 	
 }
 
@@ -26,7 +28,8 @@ const ProductCard: React.FC<ProductProps> = ({
 	maxPrice,
 	features,
 	service,
-	tierName
+	tierName,
+	tierNum
 }) =>
 { 
 	async function handlePurchase() {
@@ -34,7 +37,7 @@ const ProductCard: React.FC<ProductProps> = ({
       const res = await fetch('/api/purchase', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ productId: priceId }), // Send Stripe Price ID
+        body: JSON.stringify({ productId: priceId, service_name: service, service_tier: tierName }), // Send Stripe Price ID
       });
 
       const data = await res.json();
@@ -49,28 +52,29 @@ const ProductCard: React.FC<ProductProps> = ({
   };
 	
 	return (
-		<div className="bg-white p-6 rounded-lg shadow-lg border-4 border-primary flex flex-col">
-			<h3 className="text-xl font-semibold text-gray-900">{name}</h3>
-			<p className="text-gray-700 mt-2">{description}</p>
+		<div className="bg-white p-6 rounded-lg border-4 border-primary flex flex-col">
+			<h3 className="text-2xl text-center font-semibold font-averia text-gray-700">{tierName.toUpperCase()}</h3>
+
+			<p className="text-gray-700 text-center mt-2">{description}</p>
 
 			{/* Features List */}
-			<ul className="mt-4 text-gray-700 list-disc pl-5 space-y-2">
+			<ul className="mt-4 text-gray-700 list-disc pl-4 flex flex-col items-start space-y-2">
 				{features.map((feature, index) => (
 					<li key={index}>{feature.name}</li>
 				))}
 			</ul>
 
 			{/* Price & Purchase Button */}
-			<div className="mt-auto">
-				<p className="text-lg font-semibold text-primary mt-4">
+			<div className="mt-auto text-center">
+				<p className="text-lg font-semibold font-averia text-primary my-4">
 					{fixedPrice ? '$' + fixedPrice :  (minPrice || maxPrice) ? `$${minPrice!} - $${maxPrice!}` : null}
 				</p>
 				{fixedPrice ? (<button
-					className="mt-4 w-full bg-action text-white py-2 px-4 rounded-lg hover:bg-blue-600 transition"
+					className="my-4 w-full bg-action shadow-xl shadow-black text-white py-2 px-4 rounded-lg hover:bg-[#C6B8CC] hover:text-primary transition hover:cursor-pointer"
 					onClick={handlePurchase}>
 					Purchase
-				</button>) : <Link className="mt-4 w-full bg-action text-white py-2 px-4 rounded-lg hover:bg-blue-600 transition"
-						href={`/request-quote?service=${service}&tier=${tierName}`}> Request Quote</Link>}
+				</button>) : <Link className="my-4 w-full bg-action shadow-md shadow-black text-white py-2 px-4 rounded-lg hover:bg-[#C6B8CC] hover:text-primary hover:cursor-pointer  transition"
+						href={`/request-quote?service=${service}`}> Request Quote</Link>}
 			</div>
 		</div>
 	);

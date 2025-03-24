@@ -10,7 +10,7 @@ interface Props
 const ProductSection = ({ products }: Props) =>
 {
 	return (
-		<div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
+		<div className="mt-8 grid grid-cols-1 lg:grid-cols-3 gap-6">
 			{products.length > 0 ? (
 				products.map((product) => (
 					<ProductCard
@@ -25,6 +25,7 @@ const ProductSection = ({ products }: Props) =>
 						maxPrice={product.metadata.max_price || 0}
 						service={product.metadata.service}
 						tierName={product.metadata.tier_name}
+						tierNum={product.metadata.tier_num}
 					/>
 				))
 			) : (

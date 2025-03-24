@@ -6,7 +6,7 @@ export async function POST(req: Request)
 {
   try
   {
-    const { productId } = await req.json(); // Get Product ID from frontend
+    const { productId, service_name, service_tier } = await req.json(); // Get Product ID from frontend
     const session = await stripe.checkout.sessions.create({
         payment_method_types: ["card"], // Accepts credit cards, Apple Pay, Google Pay
       line_items: [
@@ -18,6 +18,11 @@ export async function POST(req: Request)
       mode: "payment",
       success_url: `http://localhost:3000/thank-you`,
       cancel_url: `http://localhost:3000/career-development`,
+      metadata: {
+        service: service_name,
+        tier: service_tier,
+      }
+
     });
 
     return NextResponse.json({ url: session.url , session: session });

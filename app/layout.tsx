@@ -4,6 +4,7 @@ import { Averia_Serif_Libre, Poppins } from "next/font/google";
 
 import type { Metadata } from "next";
 import NavBar from "./components/NavBar";
+import Footer from "./components/Footer";
 
 const averia = Averia_Serif_Libre({
   variable: "--font-averia",
@@ -28,15 +29,16 @@ export const metadata: Metadata = {
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode;
-}>) {
+    children: React.ReactNode;
+  }>) {
   return (
-		<html lang="en">
-			<body
-			  className={`${averia.variable} ${poppins.variable} antialiased`}>
-			  <NavBar />
-				{children}
-			</body>
-		</html>
+    <html lang="en">
+      <body
+	className={`${averia.variable} ${poppins.variable}`}>
+	<NavBar />
+	{children}
+	<Footer />
+      </body>
+    </html>
   );
 }

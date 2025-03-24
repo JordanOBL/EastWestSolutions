@@ -1,10 +1,9 @@
 'use server'
 import {NextResponse} from 'next/server'
 import nodemailer from 'nodemailer';
+import transporter from '../lib/nodemailer.ts'
 export async function handleSubmitQuoteForm(formData){
   try{
-   
-
     await sendInternalQuoteEmail(formData)
     await sendAutomatedClientQuoteEmail(formData.fullName, formData.email)
   } catch(err){
@@ -37,21 +36,7 @@ async function sendInternalQuoteEmail(formData) {
       packageInterest,
       preferredStartDate,
       additionalDetails} = formData
-    const transporter = nodemailer.createTransport({
-      host: "smtp-mail.outlook.com",
-      port: 587,
-      requireTLS: true,
-      secure: false,// true for port 465, false for other ports
-      tls: {
-        ciphers: 'SSLv3',
-        rejectUnauthorized: false,
-      },
-      auth: {
-        user: "india@eastwestsolutions.us",
-        pass: process.env.NODEMAILER_APP_PASS,
-      },
-    });
-
+    
     const mailOptions = {
       from: 'quotes@eastwestsolutions.us',
       to: 'quotes@eastwestsolutions.us',
@@ -101,104 +86,7 @@ async function sendInternalQuoteEmail(formData) {
   }
 }
 
-  async function sendAutomatedClientQuoteEmail( clientFullName: string, clientEmail: string) {
-    try {
-    const clientFirstName = clientFullName.split(' ')[0]
-      const transporter = nodemailer.createTransport({
-        host: "smtp-mail.outlook.com",
-        port: 587,
-        requireTLS: true,
-        secure: false,// true for port 465, false for other ports
-        tls: {
-          ciphers: 'SSLv3',
-          rejectUnauthorized: false,
-        },
-        auth: {
-          user: "india@eastwestsolutions.us",
-          pass: process.env.NODEMAILER_APP_PASS,
-        },
-      })
-
-    const mailOptions = {
-      from: 'quotes@eastwestsolutions.us',
-      to: clientEmail,
-      replyTo: 'india@eastwestsolutions.us',
-      subject: 'Received Requested Quote',
-      html: `
-<h1>We Received Your Requested Quote</h1>
-<p>Thank you ${clientFirstName} for requesting a quote</p>
-<p>I will respond to your request within three business days.
-
-If you feel any key details were missed, please reply to this email to include. 
-</p>
-<p> Best regards,</p>
-
-<p> India | East West Solutions</p>
-
-`,
-      };
-      transporter.sendMail(mailOptions, function (error, info) {
-        if (error) {
-          console.log(error);
-        } else {
-          console.log('Email sent: ' + info.response);
-        }
-      })
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
-
-async function sendAutomatedOTPEmail( service: service,  clientEmail: string) {
-    try {
-      const transporter = nodemailer.createTransport({
-        host: "smtp-mail.outlook.com",
-        port: 587,
-        requireTLS: true,
-        secure: false,// true for port 465, false for other ports
-        tls: {
-          ciphers: 'SSLv3',
-          rejectUnauthorized: false,
-        },
-        auth: {
-          user: "india@eastwestsolutions.us",
-          pass: process.env.NODEMAILER_APP_PASS,
-        },
-      })
-
-    const mailOptions = {
-      from: 'india@eastwestsolutions.us',
-      to: clientEmail,
-      replyTo: 'india@eastwestsolutions.us',
-      subject: 'Thank You For Your Purchase',
-      html: `
-<h1>We Received Your Requested Quote</h1>
-<p>Thank you ${clientFirstName} for requesting a quote</p>
-<p>I will respond to your request within three business days.
-
-If you feel any key details were missed, please reply to this email to include. 
-</p>
-<p> Best regards,</p>
-
-<p> India | East West Solutions</p>
-
-`,
-      };
-      transporter.sendMail(mailOptions, function (error, info) {
-        if (error) {
-          console.log(error);
-        } else {
-          console.log('Email sent: ' + info.response);
-        }
-      })
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
-
-
+ 
 
 
 

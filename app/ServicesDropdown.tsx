@@ -9,31 +9,20 @@ export default function ServicesDropdown() {
 
 	return (
 		<div
-			className="relative hidden md:block"
 			onMouseOver={() => setDropdownOpen(true)}>
 			{/* Clicking "Services" scrolls down */}
 			<ScrollLink
 				to="services"
 				smooth={true}
 				duration={500}
-				className="text-xl font-bold text-black hover:text-blue-500 cursor-pointer flex items-center">
-				<span>Services</span>
-				<svg
-					className="w-4 h-4 ml-1"
-					viewBox="0 0 20 20"
-					fill="currentColor">
-					<path
-						fillRule="evenodd"
-						d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-						clipRule="evenodd"
-					/>
-				</svg>
-			</ScrollLink>
+				className="text-16 font-thin text-primary hover:text-blue-500 cursor-pointer flex ">
+				<h2>Services</h2>
+							</ScrollLink>
 
 			{/* Dropdown Menu appears on hover */}
 			{dropdownOpen && (
 				<div
-					className="absolute left-0 mt-2 w-56 bg-white border rounded-md shadow-lg z-50"
+					className="hidden md:absolute left-0 mt-2 w-56 bg-white border rounded-md shadow-lg z-50"
 					onMouseOver={() => setDropdownOpen(true)}
 					onMouseLeave={() => setDropdownOpen(false)}>
 					<ul className="py-2">

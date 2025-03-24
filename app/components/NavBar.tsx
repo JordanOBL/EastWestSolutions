@@ -5,42 +5,35 @@ import MobileNav from './MobileNav';
 import ServicesDropdown from '../ServicesDropdown'; // Client Component
 export default function Navbar() {
 	return (
-		<nav className="bg-secondary shadow-md flex justify-between w-full z-100">
-			<div className=" w-full px-2 sm:px-8 lg:px-16">
-				<div className="flex justify-between items-center h-20  px-2 sm:px-6 lg:px-8">
+		<nav className="bg-secondary shadow-md flex flex-col w-full h-fit z-100 p-1  sm:px-8 lg:px-16 justify-around justify-center ">
 					{/* Logo */}
-					<Link href="/"><div className=" flex items-center text-xl font-bold text-black">
-						<Image
-							src={Logo}
-							alt="Lighthouse Logo"
-							height={60}
-						/>
-						<h1 className="mx-2">East West Solutions</h1>
-					</div></Link>
+					<Link href="/" className=" flex flex-col items-center font-averia ">
+							<Image
+								src={Logo}
+								alt="Lighthouse Logo"
+								height={40}
+							/>
+							<h1 className="text-lg lg:text-2xl text-primary mt-1">EastWest Solutions</h1>
+					</Link>
 					{/* Mobile Nav */}
-					<MobileNav />
-
+				{/*<MobileNav />*/}
+			
 					{/* Desktop Navigation Links */}
-					<div className="hidden md:flex space-x-6">
+					<div className=" flex justify-between lg:justify-center lg:space-x-12 w-full font-poppins font-thin px-12 text-primary text-sm lg:text-lg" >
 						<Link
-							href="/"
-							className="text-xl font-bold text-black">
+							href="/">
 							<h2>Home</h2>
 						</Link>
 						<Link
-							href="/about"
-							className="text-xl font-bold text-black">
+							href="/about">
 							<h2>About</h2>
 						</Link>
 						<ServicesDropdown /> {/* Client Component */}
 						<Link
-							href="/FAQs"
-							className="text-xl font-bold text-black">
+							href="/FAQs">
 							<h2>FAQs</h2>
 						</Link>
 					</div>
-				</div>
-			</div>
 		</nav>
 	);
 }
