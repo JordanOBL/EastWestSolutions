@@ -1,8 +1,9 @@
 'use client'
 import {useForm } from "react-hook-form";
 import React from "react";
-import {handleSubmitQuoteForm} from '../../utils/api.ts'
-import {submitFormData} from '../../actions/actions.ts'
+
+import {handleSubmitQuoteForm} from '../../utils/sendEmails/handleSubmit.ts'
+
 const LeadershipStrategy = () =>
 { 
    const {register, handleSubmit, formState: {errors}, watch} = useForm({
@@ -30,8 +31,7 @@ const LeadershipStrategy = () =>
    const additionalPackageDetails = watch("additionalPackageDetails")
    return (
       <form  onSubmit={handleSubmit(data => {
-         console.log(data)
-         handleSubmitQuoteForm(data)
+         handleSubmitQuoteForm(data, 'leadership_strategy')
       })} className="p-6 m-6 md:p-10 w-full max-w-6xl mx-auto bg-white shadow-lg rounded-lg">
          <h2 className="text-3xl font-bold mb-6 text-primary">Leadership Strategy Consultation</h2>
 
@@ -123,7 +123,6 @@ const LeadershipStrategy = () =>
 
             </div>
 
-            {/* Leadership Challenges */}
             <div className="mb-8">
                <h3 className="text-lg font-semibold text-primary">What are the key leadership goals you want to achieve? (Select all that apply)</h3>
                {[

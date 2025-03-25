@@ -1,8 +1,9 @@
 'use client'
 import {useForm } from "react-hook-form";
 import React from "react";
-import {handleSubmitQuoteForm} from '../../utils/api.ts'
-import {submitFormData} from '../../actions/actions.ts'
+
+import {handleSubmitQuoteForm} from '../../utils/sendEmails/handleSubmit.ts'
+
 const  OperationalReview = () =>
 { 
    const {register, handleSubmit, formState: {errors}, watch} = useForm({
@@ -29,8 +30,7 @@ const  OperationalReview = () =>
 
    return (
       <form  onSubmit={handleSubmit(data => {
-         console.log(data)
-         handleSubmitQuoteForm(data)
+         handleSubmitQuoteForm(data, 'operational_review')
       })} className="p-6 m-6 md:p-10 w-full max-w-6xl mx-auto bg-white shadow-lg rounded-lg">
          <h2 className="text-3xl font-bold mb-6 text-primary">Operational Consultation</h2>
 
@@ -134,7 +134,7 @@ const  OperationalReview = () =>
                   'Risk mitigation and contingency planning',
                ].map((objective) => (
                      <label key={objective} className="block">
-                        <input type="checkbox" {...register("primaryObjective", {required: true, minLength: 1})} value={objective}  /> {objective}
+                        <input type="checkbox" {...register("primaryObjectives", {required: true, minLength: 1})} value={objective}  /> {objective}
                      </label>
                   ))}
             </div>

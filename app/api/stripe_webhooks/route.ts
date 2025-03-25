@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
 
 import { sendOTPClientEmail } from '../../utils/sendEmails/toClient';
+import { sendInternalOTPEmail } from '../../utils/sendEmails/toInternal';
 export async function POST(req: Request) {
   const event = await req.json()
 
@@ -12,9 +13,13 @@ export async function POST(req: Request) {
       const customerName = checkoutSession.customer_details.name
       const tier = checkoutSession.metadata.tier
       const service = checkoutSession.metadata.service
+      const receipt = checkoutSession.receipt_ur
+      const paymentIntent = checkoutSession.payment_intent
       // Then define and call a method to handle the successful payment intent.
       console.log('checkoutSession', checkoutSession)
       const sendEmail = await sendOTPClientEmail(customerName, customerEmail, service, tier)
+
+      await sendInternalOTPEmail(customerName, customerEmail, service.split('_').join(' '), tier, checkoutSession.amount_total / 100, receipt, paymentIntent)
       break;
     // ... handle other event types
     default:

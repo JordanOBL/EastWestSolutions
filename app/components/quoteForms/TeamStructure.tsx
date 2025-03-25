@@ -2,8 +2,9 @@
 'use client'
 import {useForm } from "react-hook-form";
 import React from "react";
-import {handleSubmitQuoteForm} from '../../utils/api.ts'
-import {submitFormData} from '../../actions/actions.ts'
+
+import {handleSubmitQuoteForm} from '../../utils/sendEmails/handleSubmit.ts'
+
 const  TeamStructure = () =>
 { 
    const {register, handleSubmit, formState: {errors}, watch} = useForm({
@@ -15,13 +16,12 @@ const  TeamStructure = () =>
          companyWebsite: '',
          industry: '',
          businessStage: '',
-         businessChallenges: [],
-         primaryObjectives: [],
-         primaryFocus: [],
-         organizationalGoals: '',
+         teamStructureChallenges: [],
+         teamStructureGoals: [],
          packageInterest: '',
          additionalPackageDetails: '',
          additionalPackageDetailsMessage: '',
+         organizationalChart: '',
          deadline: '',
          additionalDetails: '',
 
@@ -31,8 +31,7 @@ const  TeamStructure = () =>
 
    return (
       <form  onSubmit={handleSubmit(data => {
-         console.log(data)
-         handleSubmitQuoteForm(data)
+         handleSubmitQuoteForm(data, 'team_structure')
       })} className="p-6 m-6 md:p-10 w-full max-w-6xl mx-auto bg-white shadow-lg rounded-lg">
          <h2 className="text-3xl font-bold mb-6 text-primary">Team Structure</h2>
 
@@ -89,7 +88,7 @@ const  TeamStructure = () =>
                'High turnover or retention issues',
             ].map((challenge) => (
                   <label key={challenge} className="block">
-                     <input type="checkbox" {...register("businessChallenges", {required: true, minLength: 1})} value={challenge}  /> {challenge}
+                     <input type="checkbox" {...register("teamStuctureChallenges", {required: true, minLength: 1})} value={challenge}  /> {challenge}
                   </label>
                ))}
          </div>
@@ -133,7 +132,7 @@ const  TeamStructure = () =>
                'Developing a talent retention strategy',
             ].map((focus) => (
                   <label key={focus} className="block">
-                     <input type="checkbox" {...register("primaryFocus", {required: true, minLength: 1})} value={focus}  /> {focus}
+                     <input type="checkbox" {...register("teamStructureGoals", {required: true, minLength: 1})} value={focus}  /> {focus}
                   </label>
                ))}
             <label>Do you currently have an organizational chart?</label>

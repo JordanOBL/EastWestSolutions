@@ -1,8 +1,9 @@
 'use client'
 import {useForm } from "react-hook-form";
 import React from "react";
-import {handleSubmitQuoteForm} from '../../utils/api.ts'
-import {submitFormData} from '../../actions/actions.ts'
+
+import {handleSubmitQuoteForm} from '../../utils/sendEmails/handleSubmit.ts'
+
 const  StrategyDeck = () =>
 { 
    const {register, handleSubmit, formState: {errors}, watch} = useForm({
@@ -14,9 +15,9 @@ const  StrategyDeck = () =>
          companyWebsite: '',
          industry: '',
          businessStage: '',
-         businessObjectives: '',
-         primaryObjectives: [],
-         primaryFocus: [],
+         businessKeyObjectives: '',
+         strategyDeckGoals: [],
+         strategyDeckFocus: [],
          existingData: '',
          packageInterest: '',
          additionalPackageDetails: '',
@@ -29,8 +30,7 @@ const  StrategyDeck = () =>
 
    return (
       <form  onSubmit={handleSubmit(data => {
-         console.log(data)
-         handleSubmitQuoteForm(data)
+         handleSubmitQuoteForm(data, 'strategy_deck')
       })} className="p-6 m-6 md:p-10 w-full max-w-6xl mx-auto bg-white shadow-lg rounded-lg">
          <h2 className="text-3xl font-bold mb-6 text-primary">Strategy Deck</h2>
 
@@ -81,7 +81,7 @@ const  StrategyDeck = () =>
             </select>
             {/* Business Goals */}
             <label className="text-lg font-semibold text-primary">Briefly describe your business and its key objectives:</label>
-            <textarea {...register("businessObjectives", {required: 'Business objectives are required', minLength: 10})} className="input"  />
+            <textarea {...register("businessKeyObjectives", {required: 'Business objectives are required', minLength: 10})} className="input"  />
             <p className="text-red-500">{errors.businessObjectives?.message}</p>
 
             <h3 className="text-lg font-semibold text-primary">What are the primary goals for your strategy deck?</h3>
@@ -136,7 +136,7 @@ const  StrategyDeck = () =>
                'Risk Assessment & Mitigation Strategies'
             ].map((focus) => (
                   <label key={focus} className="block">
-                     <input type="checkbox" {...register("primaryFocus", {required: true, minLength: 1})} value={focus}  /> {focus}
+                     <input type="checkbox" {...register("strategyDeckFocus", {required: true, minLength: 1})} value={focus}  /> {focus}
                   </label>
                ))}
             <label>Do you have existing market research or financial data to include in the strategy
@@ -153,7 +153,7 @@ const  StrategyDeck = () =>
 
          {/* Preferred Start Date */}
          <div className="mb-8">
-            <label>Is there a hard deadline for your Business Plan plan?</label>
+            <label>Is there a hard deadline for your strategy deck?</label>
             <select {...register("deadline")} type="date" className="input">
                <option value="">Select</option>
                <option value="yes">Yes</option>
@@ -171,7 +171,7 @@ const  StrategyDeck = () =>
 
          {/* Additional Information */}
          <div className="mb-8">
-            <label>Any other relevant details or specific requirements for your Business Plan
+            <label>Any other relevant details or specific requirements for your Strategy Deck
                plan?</label>
             <textarea {...register("additionalDetails")} className="input"  />
          </div>

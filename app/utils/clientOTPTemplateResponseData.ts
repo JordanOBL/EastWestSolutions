@@ -1,4 +1,4 @@
-export const templateResponseData = {
+export const clientOTPTemplateResponseData = {
 'resume_build': {
   'basic': resumeBuildBasicResponse(),
   'plus': resumeBuildPlusResponse(), 
@@ -43,7 +43,8 @@ business days after feedback.</p>
 <p style="color: #000000;">Thank you again, I am looking forward to helping you advance your career!</p>
 <p style="color: #000000;">Best regards,</p>
 <p style="color: #000000;">India</p>
-
+<br/><br/>
+<img src="cid:signatureImage" style="max-width: 50px; margin-top: 10px;" />
 <p style="color: #000000;">India Rolfe | Founder, EastWest Solutions</p>
 <p style="color: #000000;">India@EastWestSolutions.us | (509) 592-5381</p>
 <a href="https://www.EastWestSolutions.us">www.EastWestSolutions.us</a>
@@ -80,7 +81,8 @@ the first draft review, each completed within 2-3 business days after feedback.<
 <p style="color: #000000;">Thank you again, I am looking forward to helping you advance your career!</p>
 <p style="color: #000000;">Best regards,</p>
 <p style="color: #000000;">India</p>
-
+<br/><br/>
+<img src="cid:signatureImage" style="max-width: 50px; margin-top: 10px;" />
 <p style="color: #000000;">India Rolfe | Founder, EastWest Solutions</p>
 <p style="color: #000000;">India@EastWestSolutions.us | (509) 592-5381</p>
 <a href="https://EastWestSolutions.us">www.EastWestSolutions.us</a>
@@ -120,7 +122,8 @@ after the first draft review, each completed within 3 business days after feedba
 <p style="color: #000000;">Thank you again, I am looking forward to helping you advance your career!</p>
 <p style="color: #000000;">Best regards,</p>
 <p style="color: #000000;">India</p>
-
+<br/><br/>
+<img src="cid:signatureImage" style="max-width: 50px; margin-top: 10px;" />
 <p style="color: #000000;">India Rolfe | Founder, EastWest Solutions</p>
 <p style="color: #000000;">India@EastWestSolutions.us | (509) 592-5381</p>
 <a href="https://www.EastWestSolutions.us">www.EastWestSolutions.us</a>
@@ -151,7 +154,8 @@ business days after feedback.</p>
 <p style="color: #000000;">Thank you again, I am looking forward to helping you advance your career!</p>
 <p style="color: #000000;">Best regards,</p>
 <p style="color: #000000;">India</p>
-
+<br/><br/>
+<img src="cid:signatureImage" style="max-width: 50px; margin-top: 10px;" />
 <p style="color: #000000;">India Rolfe | Founder, EastWest Solutions</p>
 <p style="color: #000000;">India@EastWestSolutions.us | (509) 592-5381</p>
 <a href="https://www.EastWestSolutions.us">www.EastWestSolutions.us</a>
@@ -183,7 +187,8 @@ within 2-3 business days after feedback.</p>
 <p style="color: #000000;">Thank you again, I am looking forward to helping you advance your career!</p>
 <p style="color: #000000;">Best regards,</p>
 <p style="color: #000000;">India</p>
-
+<br/><br/>
+<img src="cid:signatureImage" style="max-width: 50px; margin-top: 10px;" />
 <p style="color: #000000;">India Rolfe | Founder, EastWest Solutions</p>
 <p style="color: #000000;">India@EastWestSolutions.us | (509) 592-5381</p>
 <a href="https://www.EastWestSolutions.us">www.EastWestSolutions.us</a>
@@ -216,7 +221,8 @@ completed within 3 business days after feedback.</p>
 <p style="color: #000000;">Thank you again, I am looking forward to helping you advance your career!</p>
 <p style="color: #000000;">Best regards,</p>
 <p style="color: #000000;">India</p>
-
+<br/><br/>
+<img src="cid:signatureImage" style="max-width: 50px; margin-top: 10px;" />
 <p style="color: #000000;">India Rolfe | Founder, EastWest Solutions</p>
 <p style="color: #000000;">India@EastWestSolutions.us | (509) 592-5381</p>
 <a href="https://www.EastWestSolutions.us">www.EastWestSolutions.us</a>
@@ -249,6 +255,9 @@ review, each completed within 3 business days after feedback.</p>
 <p style="color: #000000;">Thank you again, I am looking forward to helping you advance your career!</p>
 <p style="color: #000000;">Best regards,</p>
 <p style="color: #000000;">India</p>
+
+<br/><br/>
+<img src="cid:signatureImage" style="max-width: 50px; margin-top: 10px;" />
 <p style="color: #000000;">India Rolfe | Founder, EastWest Solutions</p>
 <p style="color: #000000;">India@EastWestSolutions.us | (509) 592-5381</p>
 <a href="https://www.EastWestSolutions.us">www.EastWestSolutions.us</a>
@@ -282,6 +291,8 @@ review, each completed within 3 business days after feedback.</p>
 <p style="color: #000000;">Thank you again, I am looking forward to helping you advance your career!</p>
 <p style="color: #000000;">Best regards,</p>
 <p style="color: #000000;">India</p>
+<br/><br/>
+<img src="cid:signatureImage" style="max-width: 50px; margin-top: 10px;" />
 <p style="color: #000000;">India Rolfe | Founder, EastWest Solutions</p>
 <p style="color: #000000;">India@EastWestSolutions.us | (509) 592-5381</p>
 <a href="https://www.EastWestSolutions.us">www.EastWestSolutions.us</a>
