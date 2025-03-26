@@ -70,7 +70,7 @@ export async function sendInternalQuoteEmail(response: string, service: string) 
 
 
 
-export async function sendInternalOTPEmail(clientName: string, clientEmail: string, service: string, tier: string, price: number, receipt: string, paymentIntent: string) {
+export async function sendInternalEmail(subject: string, clientName: string, clientEmail: string, service: string, tier: string, price: number, receipt: string, paymentIntent: string) {
   try {
     
      const transporter = nodemailer.createTransport({
@@ -92,7 +92,7 @@ export async function sendInternalOTPEmail(clientName: string, clientEmail: stri
     const mailOptions = {
       from: 'receipts@eastwestsolutions.us',
       to: 'receipts@eastwestsolutions.us',
-      subject: `New ${service} ${tier} Purchase`,
+      subject:  subject,
       html: `<p style={{color: 'black'}}>Client Name: ${clientName}</p>
 <p style={{color: 'black'}}>Client Email: ${clientEmail}</p>
 <p style={{color: 'black'}}>Service: ${service}</p>
