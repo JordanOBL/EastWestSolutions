@@ -1,11 +1,13 @@
 import ProductSection from "../components/ProductSection";
 import React from "react";
 import { StripeProduct } from "../types";
+import Logo from '@/public/logo/IconOnly_Transparent_NoBuffer.png'
+import Image from 'next/image';
 
 const ManagementConsultingPage = async () => {
 	// Fetch data from API
 	const response = await fetch(
-		`http://localhost:3000/api/products-by-specialty/management_consulting`,
+		`http://${process.env.URL}/api/products-by-specialty/management_consulting`,
 		{ cache: 'no-store' } // Ensures fresh data (SSR equivalent)
 	);
 	const products: StripeProduct[] = await response.json();
@@ -19,29 +21,36 @@ const ManagementConsultingPage = async () => {
 		(product) => product.metadata.service == 'operational_review'
 	);
 	return (
-		<div className="min-h-screen bg-gray-50 py-12 px-6">
-			<div className="mx-auto bg-white p-8 md:p-16 shadow-lg rounded-lg">
-				<h1 className="text-3xl font-bold text-gray-900">
+		<div className="min-h-screen bg-[url('/HeroBackground.jpg')] flex justify-center bg-fill py-12 px-6">
+			<div className=" max-w-7xl flex flex-col items-center bg-secondary/20 p-8 md:p-16 shadow-lg rounded-lg">
+				<h1 className="text-3xl text-center font-semi font-averia uppercase text-gray-900">
 					Management Consulting
 				</h1>
-				<h2 className="text-xl italic text-gray-600 mt-2">
+				<h2 className="text-xl text-center  italic text-gray-700 mt-2">
 					Streamline, Strengthen, Succeed
 				</h2>
-				<p className="text-gray-700 leading-relaxed mt-4">
+				<p className="text-gray-900 text-center  leading-relaxed mt-4">
 					At EastWest Solutions, I partner with you to unlock the full
 					potential for your business. Through targeted management
 					consulting, I help refine leadership strategies, enhance
 					team dynamics, and improve operational efficiency – setting
 					the stage for sustainable growth.
 				</p>
+				<div className='w-full flex justify-center my-8'>
+					<Image
+						src={Logo}
+						alt="Lighthouse Logo"
+						height={40}
+					/>
+				</div>
 
 				{/*Leadership Strategy Section */}
-				<div className="mt-8 bg-gray-100 p-6 rounded-lg shadow">
-					<h3 className="text-2xl font-semibold text-gray-900">
+				<div className="bg-gray-100/30 text-center  p-6 rounded-lg shadow">
+					<h3 className="text-2xl font-semi font-averia uppercase text-gray-900">
 						Leadership Strategy
 					</h3>
 					<p className="text-gray-700 mt-2">
-						– Empower your leadership team with clear direction and
+						Empower your leadership team with clear direction and
 						improved alignment
 					</p>
 
@@ -56,14 +65,20 @@ const ManagementConsultingPage = async () => {
 				</div>
 
 				{/* Pricing Table */}
-				<h2 className="text-2xl font-semibold text-gray-900 mt-10">
-					Get a Quote for your Leadership Strategy Today!
-				</h2>
+			
 				{/* Grid Layout for Products */}
 				<ProductSection products={leadershipStrategyProducts} />
 				{/* Resume Build Section */}
-				<div className="mt-8 bg-gray-100 p-6 rounded-lg shadow">
-					<h3 className="text-2xl font-semibold text-gray-900">
+
+				<div className='w-full flex justify-center my-8'>
+					<Image
+						src={Logo}
+						alt="Lighthouse Logo"
+						height={40}
+					/>
+				</div>
+				<div className=" bg-gray-100/30 text-center p-6 rounded-lg shadow">
+					<h3 className="text-2xl font-semi font-averia uppercase text-gray-900">
 						Team Structure
 					</h3>
 					<p className="text-gray-700 mt-2">
@@ -80,13 +95,19 @@ const ManagementConsultingPage = async () => {
 					</p>
 				</div>
 				{/* Pricing Table */}
-				<h2 className="text-2xl font-semibold text-gray-900 mt-10">
-					Get Started with Team Structure
-				</h2>
+		
 				{/* Grid Layout for Products */}
 				<ProductSection products={teamStructureProducts} />
-				<div className="mt-8 bg-gray-100 p-6 rounded-lg shadow">
-					<h3 className="text-2xl font-semibold text-gray-900">
+				<div className='w-full flex justify-center my-8'>
+					<Image
+						src={Logo}
+						alt="Lighthouse Logo"
+						height={40}
+					/>
+				</div>
+
+				<div className=" bg-gray-100/30 text-center p-6 rounded-lg shadow">
+					<h3 className="text-2xl font-semi font-averia uppercase text-gray-900">
 						Operational Review
 					</h3>
 					<p className="text-gray-700 mt-2">
@@ -103,9 +124,7 @@ const ManagementConsultingPage = async () => {
 					</p>
 				</div>
 				{/* Pricing Table */}
-				<h2 className="text-2xl font-semibold text-gray-900 mt-10">
-					Get Started with Operational Review
-				</h2>
+			
 				{/* Grid Layout for Products */}
 				<ProductSection products={operationalReviewProducts} />
 			</div>

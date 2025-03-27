@@ -1,17 +1,29 @@
 'use server'
 import Form from 'next/form';
 import {handleSubmitQuoteForm} from '../utils/api.ts'
-import LeadershipStrategyBasic from '../components/quoteForms/LeadershipStrategyBasic.tsx'
+import LeadershipStrategy from '../components/quoteForms/LeadershipStrategy.tsx'
+import BusinessPlan from '../components/quoteForms/BusinessPlan.tsx'
+import OperationalReview from '../components/quoteForms/OperationalReview.tsx'
+import StrategyDeck from '../components/quoteForms/StrategyDeck.tsx'
+import TeamStructure from '../components/quoteForms/TeamStructure.tsx'
 
 
 const RequestQuotePage = async({searchParams}) =>{
-	const {service, tier} = await searchParams;
+	const {service} = await searchParams;
 
-	if(service == 'leadership_strategy' && tier == 'basic'){
-		return (
-			<LeadershipStrategyBasic/>	
-
-		)
+	switch(service){
+		case 'leadership_strategy':
+		  return <LeadershipStrategy/>
+		case 'business_planning':
+		  return <BusinessPlan/>
+		case 'operational_review':
+		  return <OperationalReview/>
+		case 'strategy_deck':
+		  return <StrategyDeck/>
+		case 'team_structure':
+		  return <TeamStructure/>
+		default:
+		  return <h1>Service not found</h1>
 	}
 }
 

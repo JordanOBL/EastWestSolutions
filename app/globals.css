@@ -8,23 +8,21 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-averia);
-  --font-mono: var(--font-poppins);
+  --font-averia: var(--font-averia);
+  --font-poppins: var(--font-poppins);
   --color-primary: #0C343C;
   --color-secondary: #F1EDE4;
-  --color-action:#f84406;
+  --color-action:#0C343C;
 }
 
-@media (prefers-color-scheme: dark) {
+{/*}@media (prefers-color-scheme: dark) {
   :root {
     --background: #0C343C;
     --foreground: #F1EDE4;
   }
-}
-h1, h2, h3, h4, h5{
-  font-family: var(--font-averia);
-}
-p, li, Link, span{
+}*/}
+
+p, li, span{
   font-family: var(--font-poppins)
 }
 body {

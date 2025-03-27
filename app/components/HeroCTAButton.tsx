@@ -27,7 +27,7 @@ const HeroCTAButton: React.FC<HeroCTAButtonProps> = ({
 			to={href}
 			smooth={true}
 			duration={500}
-			className=" w-fit px-6 py-3 text-lg font-bold text-white bg-[#f84406] rounded-lg shadow-lg hover:bg-[#dbfbfb] transition duration-300 z-30">
+			className=" w-fit border-2 border-secondary/50 px-6 py-3 text-lg font-bold text-secondary bg-primary rounded-lg shadow-lg shadow-black lg:hover:bg-secondary lg:hover:text-primary hover:cursor-pointer transition duration-300 z-30">
 			{text}
 		</ScrollLink>
 	);

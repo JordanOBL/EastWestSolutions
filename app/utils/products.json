@@ -1,0 +1,1009 @@
+{
+  "object": "list",
+  "data": [
+    {
+      "id": "prod_RztDxHUgVuxXV9",
+      "object": "product",
+      "active": true,
+      "attributes": [],
+      "created": 1742755164,
+      "default_price": "price_1R5tQeRWgljsp4ndvk7wfewt",
+      "description": "Update and refine your existing resume to reflect your latest experience and skills.",
+      "images": [],
+      "livemode": false,
+      "marketing_features": [
+        {
+          "name": "General resume update"
+        },
+        {
+          "name": "Up to three tailored cover letters for specific job applications"
+        },
+        {
+          "name": "Includes three rounds of edits."
+        }
+      ],
+      "metadata": {
+        "service": "resume_refresh",
+        "specialty": "career_development",
+        "tier_name": "premium",
+        "tier_num": "3"
+      },
+      "name": "Resume Refresh - Premium",
+      "package_dimensions": null,
+      "shippable": null,
+      "statement_descriptor": null,
+      "tax_code": null,
+      "type": "service",
+      "unit_label": null,
+      "updated": 1742755164,
+      "url": null
+    },
+    {
+      "id": "prod_Rzt9azebXSYYQx",
+      "object": "product",
+      "active": true,
+      "attributes": [],
+      "created": 1742754955,
+      "default_price": "price_1R5tNHRWgljsp4ndQSBVQevV",
+      "description": "Update and refine your existing resume to reflect your latest experience and skills.",
+      "images": [],
+      "livemode": false,
+      "marketing_features": [
+        {
+          "name": "Includes the Basic package"
+        },
+        {
+          "name": "A versatile cover letter adaptable to various positions"
+        },
+        {
+          "name": "+2  rounds of edits."
+        }
+      ],
+      "metadata": {
+        "service": "resume_refresh",
+        "specialty": "career_development",
+        "tier_name": "plus",
+        "tier_num": "2"
+      },
+      "name": "Resume Refresh - Plus",
+      "package_dimensions": null,
+      "shippable": null,
+      "statement_descriptor": null,
+      "tax_code": null,
+      "type": "service",
+      "unit_label": null,
+      "updated": 1742754956,
+      "url": null
+    },
+    {
+      "id": "prod_Rzt6i5vX926WG9",
+      "object": "product",
+      "active": true,
+      "attributes": [],
+      "created": 1742754766,
+      "default_price": "price_1R5tKERWgljsp4ndvCwpWOwt",
+      "description": "Update and refine your existing resume to reflect your latest experience and skills.",
+      "images": [],
+      "livemode": false,
+      "marketing_features": [
+        {
+          "name": "General resume update only to reflect your latest experience"
+        },
+        {
+          "name": "+1 round of edits."
+        }
+      ],
+      "metadata": {
+        "service": "resume_refresh",
+        "specialty": "career_development",
+        "tier_name": "basic",
+        "tier_num": "1"
+      },
+      "name": "Resume Refresh - Basic",
+      "package_dimensions": null,
+      "shippable": null,
+      "statement_descriptor": null,
+      "tax_code": null,
+      "type": "service",
+      "unit_label": null,
+      "updated": 1742761014,
+      "url": null
+    },
+    {
+      "id": "prod_RzfC6GplUdFyBM",
+      "object": "product",
+      "active": true,
+      "attributes": [],
+      "created": 1742703041,
+      "default_price": null,
+      "description": "(created by Stripe CLI)",
+      "images": [],
+      "livemode": false,
+      "marketing_features": [],
+      "metadata": {},
+      "name": "myproduct",
+      "package_dimensions": null,
+      "shippable": null,
+      "statement_descriptor": null,
+      "tax_code": null,
+      "type": "service",
+      "unit_label": null,
+      "updated": 1742703041,
+      "url": null
+    },
+    {
+      "id": "prod_RzfAfpWhDmCo1z",
+      "object": "product",
+      "active": true,
+      "attributes": [],
+      "created": 1742702954,
+      "default_price": null,
+      "description": "(created by Stripe CLI)",
+      "images": [],
+      "livemode": false,
+      "marketing_features": [],
+      "metadata": {},
+      "name": "myproduct",
+      "package_dimensions": null,
+      "shippable": null,
+      "statement_descriptor": null,
+      "tax_code": null,
+      "type": "service",
+      "unit_label": null,
+      "updated": 1742702954,
+      "url": null
+    },
+    {
+      "id": "prod_RytX4QiFR2AzZ4",
+      "object": "product",
+      "active": true,
+      "attributes": [],
+      "created": 1742525765,
+      "default_price": null,
+      "description": "(created by Stripe CLI)",
+      "images": [],
+      "livemode": false,
+      "marketing_features": [],
+      "metadata": {},
+      "name": "myproduct",
+      "package_dimensions": null,
+      "shippable": null,
+      "statement_descriptor": null,
+      "tax_code": null,
+      "type": "service",
+      "unit_label": null,
+      "updated": 1742525765,
+      "url": null
+    },
+    {
+      "id": "prod_RyKo9B91KkPvIs",
+      "object": "product",
+      "active": true,
+      "attributes": [],
+      "created": 1742396575,
+      "default_price": "price_1R4O8yRWgljsp4ndf9phxIH4",
+      "description": "Streamline operations to increase efficiency and reduce costs.",
+      "images": [],
+      "livemode": false,
+      "marketing_features": [
+        {
+          "name": "All Basic & Plus features"
+        },
+        {
+          "name": "Comprehensive process redesign recommendations"
+        },
+        {
+          "name": "Development of KPIs"
+        },
+        {
+          "name": "Risk assessment and mitigation strategies"
+        }
+      ],
+      "metadata": {
+        "max_price": "3500",
+        "min_price": "2000",
+        "service": "operational_review",
+        "specialty": "management_consulting",
+        "tier_name": "premium",
+        "tier_num": "3"
+      },
+      "name": "Operational Review - Premium",
+      "package_dimensions": null,
+      "shippable": null,
+      "statement_descriptor": null,
+      "tax_code": null,
+      "type": "service",
+      "unit_label": null,
+      "updated": 1742396576,
+      "url": null
+    },
+    {
+      "id": "prod_RyKlmKRbp3xbMM",
+      "object": "product",
+      "active": true,
+      "attributes": [],
+      "created": 1742396362,
+      "default_price": "price_1R4O5WRWgljsp4ndf8XywTfj",
+      "description": "Streamline operations to increase efficiency and reduce costs.",
+      "images": [],
+      "livemode": false,
+      "marketing_features": [
+        {
+          "name": "All Basic features"
+        },
+        {
+          "name": "In-depth process analysis"
+        },
+        {
+          "name": "Workflow mapping and process improvement suggestions"
+        },
+        {
+          "name": "Identification of key performance bottlenecks"
+        }
+      ],
+      "metadata": {
+        "max_price": "2000",
+        "min_price": "1200",
+        "service": "operational_review",
+        "specialty": "management_consulting",
+        "tier_name": "plus",
+        "tier_num": "2"
+      },
+      "name": "Operational Review - Plus",
+      "package_dimensions": null,
+      "shippable": null,
+      "statement_descriptor": null,
+      "tax_code": null,
+      "type": "service",
+      "unit_label": null,
+      "updated": 1742396363,
+      "url": null
+    },
+    {
+      "id": "prod_RyKgHM0TNFMAAP",
+      "object": "product",
+      "active": true,
+      "attributes": [],
+      "created": 1742396110,
+      "default_price": "price_1R4O1SRWgljsp4ndH3L3Fj44",
+      "description": "Streamline operations to increase efficiency and reduce costs.",
+      "images": [],
+      "livemode": false,
+      "marketing_features": [
+        {
+          "name": "Basic review of key processes and workflows"
+        },
+        {
+          "name": "Identification of immediate inefficiencies and quick wins"
+        }
+      ],
+      "metadata": {
+        "max_price": "1000",
+        "min_price": "500",
+        "service": "operational_review",
+        "specialty": "management_consulting",
+        "tier_name": "basic",
+        "tier_num": "1"
+      },
+      "name": "Operational Review - Basic",
+      "package_dimensions": null,
+      "shippable": null,
+      "statement_descriptor": null,
+      "tax_code": null,
+      "type": "service",
+      "unit_label": null,
+      "updated": 1742396111,
+      "url": null
+    },
+    {
+      "id": "prod_RyKdnmwGo9d45M",
+      "object": "product",
+      "active": true,
+      "attributes": [],
+      "created": 1742395886,
+      "default_price": "price_1R4NxqRWgljsp4ndDNe54WDu",
+      "description": "Ensure your team is organized for maximum efficiency and effectiveness.",
+      "images": [],
+      "livemode": false,
+      "marketing_features": [
+        {
+          "name": "All Basic & Plus features"
+        },
+        {
+          "name": "Full team performance analysis (roles, skills, and gaps)"
+        },
+        {
+          "name": "Talent development plan"
+        },
+        {
+          "name": "Retention Strategy"
+        }
+      ],
+      "metadata": {
+        "max_price": "3500",
+        "min_price": "2000",
+        "service": "team_structure",
+        "specialty": "management_consulting",
+        "tier_name": "premium",
+        "tier_num": "3"
+      },
+      "name": "Team Structure - Premium",
+      "package_dimensions": null,
+      "shippable": null,
+      "statement_descriptor": null,
+      "tax_code": null,
+      "type": "service",
+      "unit_label": null,
+      "updated": 1742395886,
+      "url": null
+    },
+    {
+      "id": "prod_RyKYRoM0Mg6Mlc",
+      "object": "product",
+      "active": true,
+      "attributes": [],
+      "created": 1742395617,
+      "default_price": "price_1R4NtWRWgljsp4nd3tJk8iTm",
+      "description": "Ensure your team is organized for maximum efficiency and effectiveness.",
+      "images": [],
+      "livemode": false,
+      "marketing_features": [
+        {
+          "name": "All Basic features"
+        },
+        {
+          "name": "Full organizational assessment"
+        },
+        {
+          "name": "Recommendations for restructuring or realignment"
+        }
+      ],
+      "metadata": {
+        "max_price": "2000",
+        "min_price": "1200",
+        "service": "team_structure",
+        "specialty": "management_consulting",
+        "tier_name": "plus",
+        "tier_num": "2"
+      },
+      "name": "Team Structure - Plus",
+      "package_dimensions": null,
+      "shippable": null,
+      "statement_descriptor": null,
+      "tax_code": null,
+      "type": "service",
+      "unit_label": null,
+      "updated": 1742395618,
+      "url": null
+    },
+    {
+      "id": "prod_RyKUUVDhhi635V",
+      "object": "product",
+      "active": true,
+      "attributes": [],
+      "created": 1742395345,
+      "default_price": "price_1R4Np7RWgljsp4ndKuAfXfE2",
+      "description": "Ensure your team is organized for maximum efficiency and effectiveness.",
+      "images": [],
+      "livemode": false,
+      "marketing_features": [
+        {
+          "name": "Basic organizational chart review"
+        },
+        {
+          "name": "Recommendations for streamlining roles and responsibilities"
+        }
+      ],
+      "metadata": {
+        "max_price": "500",
+        "min_price": "1000",
+        "service": "team_structure",
+        "specialty": "management_consulting",
+        "tier_name": "basic",
+        "tier_num": "1"
+      },
+      "name": "Team Structure - Basic",
+      "package_dimensions": null,
+      "shippable": null,
+      "statement_descriptor": null,
+      "tax_code": null,
+      "type": "service",
+      "unit_label": null,
+      "updated": 1742395416,
+      "url": null
+    },
+    {
+      "id": "prod_RyKOOcae8Y5TDF",
+      "object": "product",
+      "active": true,
+      "attributes": [],
+      "created": 1742395012,
+      "default_price": "price_1R4NjkRWgljsp4ndCkqkX2W5",
+      "description": "Empower your leadership team with clear direction and improved alignment",
+      "images": [],
+      "livemode": false,
+      "marketing_features": [
+        {
+          "name": "All Plus features"
+        },
+        {
+          "name": "Leadership pipeline development (succession planning)"
+        },
+        {
+          "name": "Executive coaching recommendations"
+        },
+        {
+          "name": "Goal-setting framework for leadership teams"
+        }
+      ],
+      "metadata": {
+        "max_price": "3500",
+        "min_price": "2000",
+        "service": "leadership_strategy",
+        "specialty": "management_consulting",
+        "tier_name": "premium",
+        "tier_num": "3"
+      },
+      "name": "Leadership Strategy - Premium",
+      "package_dimensions": null,
+      "shippable": null,
+      "statement_descriptor": null,
+      "tax_code": null,
+      "type": "service",
+      "unit_label": null,
+      "updated": 1742395013,
+      "url": null
+    },
+    {
+      "id": "prod_RyKK8tmw8xeaS8",
+      "object": "product",
+      "active": true,
+      "attributes": [],
+      "created": 1742394757,
+      "default_price": "price_1R4NfdRWgljsp4nddEVepegb",
+      "description": "At EastWest Solutions, I partner with you to unlock the full potential for your business. Through targeted management consulting, I help refine leadership strategies, enhance team dynamics, and improve operational efficiency – setting the stage for sustainable growth.",
+      "images": [],
+      "livemode": false,
+      "marketing_features": [
+        {
+          "name": "All Basic features"
+        },
+        {
+          "name": "Identification of leadership gaps and development opportunities"
+        },
+        {
+          "name": "Suggested leadership training or mentoring programs"
+        }
+      ],
+      "metadata": {
+        "max_price": "2000",
+        "min_price": "1200",
+        "service": "leadership_strategy",
+        "specialty": "management_consulting",
+        "tier_name": "plus",
+        "tier_num": "2"
+      },
+      "name": "Leadership Strategy - Plus",
+      "package_dimensions": null,
+      "shippable": null,
+      "statement_descriptor": null,
+      "tax_code": null,
+      "type": "service",
+      "unit_label": null,
+      "updated": 1742397257,
+      "url": null
+    },
+    {
+      "id": "prod_RyKEWO20MRgZCO",
+      "object": "product",
+      "active": true,
+      "attributes": [],
+      "created": 1742394393,
+      "default_price": "price_1R4NZlRWgljsp4ndIoncwmpy",
+      "description": "Empower your leadership team with clear direction and improved alignment",
+      "images": [],
+      "livemode": false,
+      "marketing_features": [
+        {
+          "name": "High-Level assessment of leadership team roles and responsibilities"
+        },
+        {
+          "name": "Recommendations for improving leadership alignment and communication"
+        }
+      ],
+      "metadata": {
+        "max_price": "1000",
+        "min_price": "500",
+        "service": "leadership_strategy",
+        "specialty": "management_consulting",
+        "tier_name": "basic",
+        "tier_num": "1"
+      },
+      "name": "Leadership Strategy - Basic",
+      "package_dimensions": null,
+      "shippable": null,
+      "statement_descriptor": null,
+      "tax_code": null,
+      "type": "service",
+      "unit_label": null,
+      "updated": 1742394394,
+      "url": null
+    },
+    {
+      "id": "prod_RyBdWdOm5kxJha",
+      "object": "product",
+      "active": true,
+      "attributes": [],
+      "created": 1742362458,
+      "default_price": "price_1R4FGgRWgljsp4ndwoTtGmn1",
+      "description": "High-impact strategy decks designed to align your team and drive action",
+      "images": [],
+      "livemode": false,
+      "marketing_features": [
+        {
+          "name": "All Basic &  Plus features"
+        },
+        {
+          "name": "Comprehensive strategic framework (marketing, operations, and financial goals)"
+        },
+        {
+          "name": "In-depth market research and competitive analysis"
+        },
+        {
+          "name": "Financial projections (3-5 years)"
+        },
+        {
+          "name": "Performance tracking metrics"
+        },
+        {
+          "name": "Risk analysis and mitigation plans"
+        },
+        {
+          "name": "15-20 slides"
+        }
+      ],
+      "metadata": {
+        "max_price": "2800",
+        "min_price": "2000",
+        "service": "strategy_deck",
+        "specialty": "strategy_planning",
+        "tier_name": "premium",
+        "tier_num": "3"
+      },
+      "name": "Strategy Deck - Premium",
+      "package_dimensions": null,
+      "shippable": null,
+      "statement_descriptor": null,
+      "tax_code": null,
+      "type": "service",
+      "unit_label": null,
+      "updated": 1742366040,
+      "url": null
+    },
+    {
+      "id": "prod_RyBZKpL8oWhyyG",
+      "object": "product",
+      "active": true,
+      "attributes": [],
+      "created": 1742362205,
+      "default_price": "price_1R4FCbRWgljsp4ndRNyW69qA",
+      "description": "High-impact strategy decks designed to align your team and drive action",
+      "images": [],
+      "livemode": false,
+      "marketing_features": [
+        {
+          "name": "All Basic features"
+        },
+        {
+          "name": "Detailed strategy outline with clear action steps"
+        },
+        {
+          "name": "Competitor insights (strengths, weaknesses, market position)"
+        },
+        {
+          "name": "Basic financial projections (1-2 years)"
+        },
+        {
+          "name": "KPI recommendations"
+        },
+        {
+          "name": "10-15 slides"
+        }
+      ],
+      "metadata": {
+        "max_price": "1800",
+        "min_price": "1200",
+        "service": "strategy_deck",
+        "specialty": "strategy_planning",
+        "tier_name": "plus",
+        "tier_num": "2"
+      },
+      "name": "Strategy Deck - Plus",
+      "package_dimensions": null,
+      "shippable": null,
+      "statement_descriptor": null,
+      "tax_code": null,
+      "type": "service",
+      "unit_label": null,
+      "updated": 1742366024,
+      "url": null
+    },
+    {
+      "id": "prod_RyBV1injV2bFMQ",
+      "object": "product",
+      "active": true,
+      "attributes": [],
+      "created": 1742361973,
+      "default_price": "price_1R4F8sRWgljsp4nd7KE0D7Jw",
+      "description": "High-impact strategy decks designed to align your team and drive action",
+      "images": [],
+      "livemode": false,
+      "marketing_features": [
+        {
+          "name": "High-level overview of business goals and key strategies"
+        },
+        {
+          "name": "Simple marketing analysis (basic competitor snapshot and market position)"
+        },
+        {
+          "name": "No financials included"
+        },
+        {
+          "name": "5-8 slides"
+        }
+      ],
+      "metadata": {
+        "max_price": "1000",
+        "min_price": "600",
+        "service": "strategy_deck",
+        "specialty": "strategy_planning",
+        "tier_name": "basic",
+        "tier_num": "1"
+      },
+      "name": "Strategy Deck - Basic",
+      "package_dimensions": null,
+      "shippable": null,
+      "statement_descriptor": null,
+      "tax_code": null,
+      "type": "service",
+      "unit_label": null,
+      "updated": 1742366009,
+      "url": null
+    },
+    {
+      "id": "prod_RyBRI03jbqCiVn",
+      "object": "product",
+      "active": true,
+      "attributes": [],
+      "created": 1742361713,
+      "default_price": "price_1R4F4fRWgljsp4ndbbyJD1Bk",
+      "description": "Comprehensive business plans designed to clarify your vision and guide strategic decisions.",
+      "images": [],
+      "livemode": false,
+      "marketing_features": [
+        {
+          "name": "All Basic & Plus features"
+        },
+        {
+          "name": "Strategy deck (10-15 slides) covering key business goals and approach"
+        },
+        {
+          "name": "In-depth market analysis (including competitor positioning and market gaps)"
+        },
+        {
+          "name": "Financial modeling (3–5-year projections)"
+        },
+        {
+          "name": "Risk analysis and mitigation strategies"
+        }
+      ],
+      "metadata": {
+        "max_price": "3000",
+        "min_price": "2500",
+        "service": "business_planning",
+        "specialty": "strategy_planning",
+        "tier_name": "premium",
+        "tier_num": "3"
+      },
+      "name": "Business Planning - Premium",
+      "package_dimensions": null,
+      "shippable": null,
+      "statement_descriptor": null,
+      "tax_code": null,
+      "type": "service",
+      "unit_label": null,
+      "updated": 1742367847,
+      "url": null
+    },
+    {
+      "id": "prod_RyBNRom6dLPVcu",
+      "object": "product",
+      "active": true,
+      "attributes": [],
+      "created": 1742361445,
+      "default_price": "price_1R4F0LRWgljsp4ndsyTKVIuM",
+      "description": "Comprehensive business plans designed to clarify your vision and guide strategic decisions.",
+      "images": [],
+      "livemode": false,
+      "marketing_features": [
+        {
+          "name": "All Basic Features"
+        },
+        {
+          "name": "Financial projections (profit/loss, cash flow, and break-even analysis)"
+        },
+        {
+          "name": "More detailed market research (size, trends, and potential)"
+        },
+        {
+          "name": "SWOT analysis"
+        },
+        {
+          "name": "Pricing strategy"
+        }
+      ],
+      "metadata": {
+        "max_price": "2000",
+        "min_price": "1200",
+        "service": "business_planning",
+        "specialty": "strategy_planning",
+        "tier_name": "plus",
+        "tier_num": "2"
+      },
+      "name": "Business Planning - Plus",
+      "package_dimensions": null,
+      "shippable": null,
+      "statement_descriptor": null,
+      "tax_code": null,
+      "type": "service",
+      "unit_label": null,
+      "updated": 1742362963,
+      "url": null
+    },
+    {
+      "id": "prod_RyBJczVzt850Ma",
+      "object": "product",
+      "active": true,
+      "attributes": [],
+      "created": 1742361215,
+      "default_price": "price_1R4EweRWgljsp4ndjiQFKTQz",
+      "description": "Comprehensive business plans designed to clarify your vision and guide strategic decisions. ",
+      "images": [],
+      "livemode": false,
+      "marketing_features": [
+        {
+          "name": "Executive summary and business description (mission, vision, objectives)"
+        },
+        {
+          "name": "Product/service overview"
+        },
+        {
+          "name": "Target market analysis (basic demographic and psychographic data)"
+        },
+        {
+          "name": "High-level marketing and sales strategy"
+        },
+        {
+          "name": "Basic operational plan (business model and key processes)"
+        }
+      ],
+      "metadata": {
+        "max_price": "1200",
+        "min_price": "800",
+        "service": "business_planning",
+        "specialty": "strategy_planning",
+        "tier_name": "basic",
+        "tier_num": "1"
+      },
+      "name": "Business Planning - Basic",
+      "package_dimensions": null,
+      "shippable": null,
+      "statement_descriptor": null,
+      "tax_code": null,
+      "type": "service",
+      "unit_label": null,
+      "updated": 1742362978,
+      "url": null
+    },
+    {
+      "id": "prod_Rx0Wtfv4laVu9J",
+      "object": "product",
+      "active": true,
+      "attributes": [],
+      "created": 1742090469,
+      "default_price": "price_1R36VlRWgljsp4ndMKlMs7E4",
+      "description": "Providing targeted career development to position you for success. Resume updates tailored to five specific positions, LinkedIn + one other business social media review, five position specific cover letters – includes eight rounds of edits. ",
+      "images": [],
+      "livemode": false,
+      "marketing_features": [
+        {
+          "name": "Resume updates tailored to 5 specific positions"
+        },
+        {
+          "name": "LinkedIn + 1 other business social media review"
+        },
+        {
+          "name": "5 position specific cover letters"
+        },
+        {
+          "name": "Includes 8 rounds of edits"
+        }
+      ],
+      "metadata": {
+        "service": "professional_development",
+        "specialty": "career_development",
+        "tier_name": "premium",
+        "tier_num": "3"
+      },
+      "name": "Professional Development - Premium",
+      "package_dimensions": null,
+      "shippable": null,
+      "statement_descriptor": null,
+      "tax_code": null,
+      "type": "service",
+      "unit_label": "premium",
+      "updated": 1742362998,
+      "url": null
+    },
+    {
+      "id": "prod_Rx0SQvV0JZrIfX",
+      "object": "product",
+      "active": true,
+      "attributes": [],
+      "created": 1742090206,
+      "default_price": "price_1R36RWRWgljsp4ndOgATkXmy",
+      "description": "Providing targeted career development to position you for success. Resume updates tailored to two specific positions, LinkedIn + one other business social media review, two position-specific cover letters – includes five rounds of edits.",
+      "images": [],
+      "livemode": false,
+      "marketing_features": [
+        {
+          "name": "Resume updates tailored to 2 specific positions"
+        },
+        {
+          "name": "LinkedIn + 1 other business social media review"
+        },
+        {
+          "name": "2 position-specific cover letters"
+        },
+        {
+          "name": "5 rounds of edits"
+        }
+      ],
+      "metadata": {
+        "service": "professional_development",
+        "specialty": "career_development",
+        "tier_name": "plus",
+        "tier_num": "2"
+      },
+      "name": "Professional Development - Plus",
+      "package_dimensions": null,
+      "shippable": null,
+      "statement_descriptor": null,
+      "tax_code": null,
+      "type": "service",
+      "unit_label": "Plus",
+      "updated": 1742362827,
+      "url": null
+    },
+    {
+      "id": "prod_Rx0O5Wz5ywIHal",
+      "object": "product",
+      "active": true,
+      "attributes": [],
+      "created": 1742089962,
+      "default_price": "price_1R36NaRWgljsp4ndOgwZ70BT",
+      "description": "Providing targeted career development to position you for success. Resume update tailored to a specific position, LinkedIn review, one position-specific cover letter – includes three rounds of edits.",
+      "images": [],
+      "livemode": false,
+      "marketing_features": [
+        {
+          "name": "Resume update tailored to a specific position"
+        },
+        {
+          "name": "LinkedIn review"
+        },
+        {
+          "name": "One position-specific cover letter"
+        }
+      ],
+      "metadata": {
+        "service": "professional_development",
+        "specialty": "career_development",
+        "tier_name": "basic",
+        "tier_num": "1"
+      },
+      "name": "Professional Development - Basic",
+      "package_dimensions": null,
+      "shippable": null,
+      "statement_descriptor": null,
+      "tax_code": null,
+      "type": "service",
+      "unit_label": null,
+      "updated": 1742834322,
+      "url": null
+    },
+    {
+      "id": "prod_Rx0CC9rFd3znRd",
+      "object": "product",
+      "active": true,
+      "attributes": [],
+      "created": 1742089237,
+      "default_price": "price_1R36BtRWgljsp4ndl4Qaveg3",
+      "description": "Industry-specific resume + tailored industry-specific cover letter –includes two rounds of edits",
+      "images": [],
+      "livemode": false,
+      "marketing_features": [],
+      "metadata": {
+        "service": "resume_build",
+        "specialty": "career_development",
+        "tier_name": "premium",
+        "tier_num": "3"
+      },
+      "name": "Resume Build - Premium",
+      "package_dimensions": null,
+      "shippable": null,
+      "statement_descriptor": null,
+      "tax_code": null,
+      "type": "service",
+      "unit_label": null,
+      "updated": 1742363028,
+      "url": null
+    },
+    {
+      "id": "prod_Rx0A5J00AlIabo",
+      "object": "product",
+      "active": true,
+      "attributes": [],
+      "created": 1742089121,
+      "default_price": "price_1R36A1RWgljsp4ndwgUNFc2e",
+      "description": "Professional resume crafted to highlight your experience and skills, a versatile cover letter that can be adapted for multiple positions – includes two rounds of edits.",
+      "images": [],
+      "livemode": false,
+      "marketing_features": [],
+      "metadata": {
+        "service": "resume_build",
+        "specialty": "career_development",
+        "tier_name": "plus",
+        "tier_num": "2"
+      },
+      "name": "Resume Build - Plus",
+      "package_dimensions": null,
+      "shippable": null,
+      "statement_descriptor": null,
+      "tax_code": null,
+      "type": "service",
+      "unit_label": null,
+      "updated": 1742362846,
+      "url": null
+    },
+    {
+      "id": "prod_RwzyNpMEM1IEAQ",
+      "object": "product",
+      "active": true,
+      "attributes": [],
+      "created": 1742088435,
+      "default_price": "price_1R35yyRWgljsp4ndB9g4wTUZ",
+      "description": "Professional resume crafted to highlight your experience and skills – includes one round of edits.",
+      "images": [],
+      "livemode": false,
+      "marketing_features": [],
+      "metadata": {
+        "service": "resume_build",
+        "specialty": "career_development",
+        "tier_name": "basic",
+        "tier_num": "1"
+      },
+      "name": "Resume Build - Basic",
+      "package_dimensions": null,
+      "shippable": null,
+      "statement_descriptor": null,
+      "tax_code": null,
+      "type": "service",
+      "unit_label": null,
+      "updated": 1742362790,
+      "url": null
+    }
+  ],
+  "has_more": false,
+  "url": "/v1/products"
+}

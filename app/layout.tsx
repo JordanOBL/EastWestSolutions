@@ -4,6 +4,7 @@ import { Averia_Serif_Libre, Poppins } from "next/font/google";
 
 import type { Metadata } from "next";
 import NavBar from "./components/NavBar";
+import Footer from "./components/Footer";
 
 const averia = Averia_Serif_Libre({
   variable: "--font-averia",
@@ -21,22 +22,23 @@ const poppins = Poppins({
 
 
 export const metadata: Metadata = {
-  title: "East West Solutions",
+  title: "EastWest Solutions",
   description: "As EastWest Solutions, my mission is to help businesses and professionals thrive by creating clear, actionable plans that make sense.",
 };
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode;
-}>) {
+    children: React.ReactNode;
+  }>) {
   return (
-		<html lang="en">
-			<body
-			  className={`${averia.variable} ${poppins.variable} antialiased`}>
-			  <NavBar />
-				{children}
-			</body>
-		</html>
+    <html lang="en">
+      <body
+	className={`${averia.variable} ${poppins.variable}`}>
+	<NavBar />
+	{children}
+	<Footer />
+      </body>
+    </html>
   );
 }
