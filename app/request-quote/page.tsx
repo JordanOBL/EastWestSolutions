@@ -4,9 +4,13 @@ import BusinessPlan from '../components/quoteForms/BusinessPlan.tsx'
 import OperationalReview from '../components/quoteForms/OperationalReview.tsx'
 import StrategyDeck from '../components/quoteForms/StrategyDeck.tsx'
 import TeamStructure from '../components/quoteForms/TeamStructure.tsx'
+type Props = {
+  searchParams: { service: string }
+};
 
 
-const RequestQuotePage = async({searchParams}:{searchParams: {service: string}}) =>{
+const RequestQuotePage = async({searchParams}: Props) =>{
+
 	const {service} = await searchParams;
 
 	switch(service){
