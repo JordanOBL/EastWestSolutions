@@ -5,28 +5,29 @@ import OperationalReview from '../components/quoteForms/OperationalReview.tsx'
 import StrategyDeck from '../components/quoteForms/StrategyDeck.tsx'
 import TeamStructure from '../components/quoteForms/TeamStructure.tsx'
 type Props = {
-  searchParams: { service: string }
+  searchParams: Promise<{ service: string }>
 };
 
 
-const RequestQuotePage = async({searchParams}: Props) =>{
+const RequestQuotePage = async (props: Props) => {
+  const searchParams = await props.searchParams;
 
-	const {service} = searchParams;
+  const {service} = searchParams;
 
-	switch(service){
-		case 'leadership_strategy':
-		  return <LeadershipStrategy/>
-		case 'business_planning':
-		  return <BusinessPlan/>
-		case 'operational_review':
-		  return <OperationalReview/>
-		case 'strategy_deck':
-		  return <StrategyDeck/>
-		case 'team_structure':
-		  return <TeamStructure/>
-		default:
-		  return <h1>Service not found</h1>
-	}
+  switch(service){
+      case 'leadership_strategy':
+        return <LeadershipStrategy/>
+      case 'business_planning':
+        return <BusinessPlan/>
+      case 'operational_review':
+        return <OperationalReview/>
+      case 'strategy_deck':
+        return <StrategyDeck/>
+      case 'team_structure':
+        return <TeamStructure/>
+      default:
+        return <h1>Service not found</h1>
+  }
 }
 
 export default RequestQuotePage
