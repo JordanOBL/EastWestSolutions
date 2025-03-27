@@ -21,6 +21,7 @@ const  StrategyDeck = () =>
          existingData: '',
          packageInterest: '',
          additionalPackageDetails: '',
+         additionalPackageDetailsMessage: '',
          deadline: '',
          deadlineDate: '',
          additionalDetails: '',
