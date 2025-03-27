@@ -33,9 +33,11 @@ const LeadershipStrategy = () =>
    return (
       <form  onSubmit={handleSubmit(async ( data  )=> {
          const response = await handleSubmitQuoteForm(data, 'leadership_strategy')
-         if (response.status === 200) {
+         if (response?.status === 200) {
             alert('Form submitted successfully!')
             reset()
+         } else {
+            alert('Form submission failed!')
          }
       })} className="p-6 m-6 md:p-10 w-full max-w-6xl mx-auto bg-white shadow-lg rounded-lg">
          <h2 className="text-3xl font-bold mb-6 text-primary">Leadership Strategy Consultation</h2>

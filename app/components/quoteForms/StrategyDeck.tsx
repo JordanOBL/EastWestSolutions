@@ -32,9 +32,11 @@ const  StrategyDeck = () =>
    return (
       <form  onSubmit={handleSubmit(async (data) => {
          const response = await handleSubmitQuoteForm(data, 'strategy_deck')
-         if (response.status === 200) {
+         if (response?.status === 200) {
             alert('Form submitted successfully!')
             reset()
+         }else{
+            alert('Form submission failed!')
          }
 
       })} className="p-6 m-6 md:p-10 w-full max-w-6xl mx-auto bg-white shadow-lg rounded-lg">
