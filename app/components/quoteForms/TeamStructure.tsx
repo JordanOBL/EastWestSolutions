@@ -96,7 +96,7 @@ const  TeamStructure = () =>
                'High turnover or retention issues',
             ].map((challenge) => (
                   <label key={challenge} className="block">
-                     <input type="checkbox" {...register("teamStuctureChallenges", {required: true, minLength: 1})} value={challenge}  /> {challenge}
+                     <input type="checkbox" {...register("teamStructureChallenges", {required: true, minLength: 1})} value={challenge}  /> {challenge}
                   </label>
                ))}
          </div>
