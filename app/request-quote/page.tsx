@@ -11,7 +11,7 @@ type Props = {
 
 const RequestQuotePage = async({searchParams}: Props) =>{
 
-	const {service} = await searchParams;
+	const {service} = searchParams;
 
 	switch(service){
 		case 'leadership_strategy':
