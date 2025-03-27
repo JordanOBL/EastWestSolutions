@@ -4,7 +4,7 @@ import { sendInternalQuoteEmail } from './toInternal.ts'
 import { sendRecievedQuoteClientEmail } from './toClient.ts'
 
 
-export async function handleSubmitQuoteForm(formData: any, service: string) {
+export async function handleSubmitQuoteForm(formData, service: string) {
   try{
     const templateResponse = await getInternalQuoteEmailTemplate(formData, service)
     await sendInternalQuoteEmail(templateResponse, service)
