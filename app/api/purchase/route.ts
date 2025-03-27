@@ -16,8 +16,8 @@ export async function POST(req: Request)
         },
       ],
       mode: "payment",
-      success_url: `http://${process.env.URL}/thank-you`,
-      cancel_url: `http://${process.env.URL}/career-development`,
+      success_url: `${process.env.NEXT_PUBLIC_BASE_URL}/thank-you`,
+      cancel_url: `${process.env.NEXT_PUBLIC_BASE_URL}/career-development`,
       metadata: {
         service: service_name,
         tier: service_tier,
