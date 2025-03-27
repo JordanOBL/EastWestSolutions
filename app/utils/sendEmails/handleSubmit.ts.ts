@@ -11,6 +11,10 @@ export async function handleSubmitQuoteForm(formData: any, service: string) {
     const templateResponse = await getInternalQuoteEmailTemplate(formData, service)
     await sendInternalQuoteEmail(templateResponse, service)
     await sendRecievedQuoteClientEmail(formData.fullName, formData.email)
+
+    return { success: true,
+      status: 200,
+    }
   } catch(err){
     console.error(err)
   }

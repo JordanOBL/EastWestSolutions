@@ -66,7 +66,7 @@ export default function ServicesSection() {
 			</h2>
 
 			{/* Desktop Grid */}
-			<div className="hidden lg:grid grid-cols-3 gap-8 mt-12">
+			<div className="hidden lg:grid grid-cols-3 gap-8 my-12">
 				{services.map((service) => (
 					<div
 						key={service.id}

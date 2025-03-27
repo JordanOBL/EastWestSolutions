@@ -4,27 +4,23 @@ import { useEffect, useState } from 'react';
 
 import HeroBackground from '../public/HeroBackground.jpg'; // Fallback Image
 import HeroCTAButton from './components/HeroCTAButton';
-import HeroVideo from '/videos/HeroVideoBackground.mp4'
 import Image from 'next/image';
-import TestimonialCarousel from './components/TestimonialCarousel';
-import Video from 'next-video'
 
 const HeroSection = () => {
 		const [isDesktop, setIsDesktop] = useState(false);
 
-		// Detect screen size
-		useEffect(() => {
-			const checkScreenSize = () =>
-				setIsDesktop(window.innerWidth > 1550);
-			checkScreenSize();
-			window.addEventListener('resize', checkScreenSize);
-			return () => window.removeEventListener('resize', checkScreenSize);
-		}, []);
-
+//		// Detect screen size
+//		useEffect(() => {
+//			const checkScreenSize = () =>
+//				setIsDesktop(window.innerWidth > 1550);
+//			checkScreenSize();
+//			window.addEventListener('resize', checkScreenSize);
+//			return () => window.removeEventListener('resize', checkScreenSize);
+//		}, []);
+//
 	return (
 		<div className="relative  flex flex-col justify-center min-h-screen bg-primary overflow-hidden">
-			{/* Background Video or Fallback Image */}
-			{isDesktop ? (
+			{/* Background Video or Fallback Image 			{isDesktop ? (
 				<div className="absolute top-0 left-0 w-full h-full object-cover">
 					<Video
 						src={HeroVideo}
@@ -43,7 +39,15 @@ const HeroSection = () => {
 					className="absolute top-0 left-0 w-full h-full object-cover"
 					priority
 				/>
-			)}
+			)}*/}
+	<Image
+					src={HeroBackground}
+					alt="Lighthouse on the beach"
+					fill
+					className="absolute top-0 left-0 w-full h-full object-cover"
+					priority
+				/>
+
 
 			{/* Dark Overlay */}
 			<div className="absolute inset-0 bg-black/70 z-10"></div>

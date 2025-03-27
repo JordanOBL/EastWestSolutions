@@ -7,7 +7,7 @@ import Image from 'next/image';
 const ManagementConsultingPage = async () => {
 	// Fetch data from API
 	const response = await fetch(
-		`http://localhost:3000/api/products-by-specialty/management_consulting`,
+		`http://${process.env.URL}/api/products-by-specialty/management_consulting`,
 		{ cache: 'no-store' } // Ensures fresh data (SSR equivalent)
 	);
 	const products: StripeProduct[] = await response.json();

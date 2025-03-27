@@ -6,7 +6,7 @@ import {handleSubmitQuoteForm} from '../../utils/sendEmails/handleSubmit.ts'
 
 const LeadershipStrategy = () =>
 { 
-   const {register, handleSubmit, formState: {errors}, watch} = useForm({
+   const {register, reset, handleSubmit, formState: {errors}, watch} = useForm({
       defaultValues: {
          fullName: '',
          email: '',
@@ -23,6 +23,7 @@ const LeadershipStrategy = () =>
          additionalPackageDetails: '',
          additionalPackageDetailsMessage: '',
          deadline: '',
+         deadlineDate: '',
          additionalDetails: '',
 
       }});
@@ -30,8 +31,12 @@ const LeadershipStrategy = () =>
 
    const additionalPackageDetails = watch("additionalPackageDetails")
    return (
-      <form  onSubmit={handleSubmit(data => {
-         handleSubmitQuoteForm(data, 'leadership_strategy')
+      <form  onSubmit={handleSubmit(async ( data  )=> {
+         const response = await handleSubmitQuoteForm(data, 'leadership_strategy')
+         if (response.status === 200) {
+            alert('Form submitted successfully!')
+            reset()
+         }
       })} className="p-6 m-6 md:p-10 w-full max-w-6xl mx-auto bg-white shadow-lg rounded-lg">
          <h2 className="text-3xl font-bold mb-6 text-primary">Leadership Strategy Consultation</h2>
 
@@ -152,7 +157,7 @@ const LeadershipStrategy = () =>
 
          {/* Preferred Start Date */}
          <div className="mb-8">
-            <label>Is there a hard deadline for your leadership strategy plan?</label>
+            <label>Is there a hard deadline for your leadership strategy?</label>
             <select {...register("deadline")} type="date" className="input">
                <option value="">Select</option>
                <option value="yes">Yes</option>
@@ -161,8 +166,8 @@ const LeadershipStrategy = () =>
             { deadline === 'yes' && (
 
                <div>
-                  <label>What is the preferred start date?</label>
-                  <input {...register("preferredStartDate")} type="date" className="input"  />
+                  <label>Please enter hard deadline:?</label>
+                  <input {...register("deadlineDate")} type="date" className="input"  />
                </div>)
             }
 
@@ -170,8 +175,7 @@ const LeadershipStrategy = () =>
 
          {/* Additional Information */}
          <div className="mb-8">
-            <label>Any other relevant details or specific requirements for your leadership strategy
-               plan?</label>
+            <label>Any other relevant details or specific requirements for your leadership strategy?</label>
             <textarea {...register("additionalDetails")} className="input"  />
          </div>
 

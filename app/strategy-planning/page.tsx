@@ -7,7 +7,7 @@ import Logo from '@/public/logo/IconOnly_Transparent_NoBuffer.png'
 const StrategyPlanningPage = async () => {
 	// Fetch data from API
 	const response = await fetch(
-		`http://localhost:3000/api/products-by-specialty/strategy_planning`,
+		`http://${process.env.URL}/api/products-by-specialty/strategy_planning`,
 		{ cache: 'no-store' } // Ensures fresh data (SSR equivalent)
 	);
 	const products: StripeProduct[] = await response.json();

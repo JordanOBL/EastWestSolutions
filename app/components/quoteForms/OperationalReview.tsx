@@ -6,7 +6,7 @@ import {handleSubmitQuoteForm} from '../../utils/sendEmails/handleSubmit.ts'
 
 const  OperationalReview = () =>
 { 
-   const {register, handleSubmit, formState: {errors}, watch} = useForm({
+   const {register, reset, handleSubmit, formState: {errors}, watch} = useForm({
       defaultValues: {
          fullName: '',
          email: '',
@@ -22,6 +22,7 @@ const  OperationalReview = () =>
          additionalPackageDetails: '',
          additionalPackageDetailsMessage: '',
          deadline: '',
+         deadlineDate: '',
          additionalDetails: '',
 
       }});
@@ -29,8 +30,13 @@ const  OperationalReview = () =>
    const additionalPackageDetails = watch("additionalPackageDetails")
 
    return (
-      <form  onSubmit={handleSubmit(data => {
-         handleSubmitQuoteForm(data, 'operational_review')
+      <form  onSubmit={handleSubmit(async (data) => {
+         const response = await handleSubmitQuoteForm(data, 'operational_review')
+         if (response.status === 200) {
+            alert('Form submitted successfully!')
+            reset()
+         }
+
       })} className="p-6 m-6 md:p-10 w-full max-w-6xl mx-auto bg-white shadow-lg rounded-lg">
          <h2 className="text-3xl font-bold mb-6 text-primary">Operational Consultation</h2>
 
@@ -152,7 +158,7 @@ const  OperationalReview = () =>
 
          {/* Preferred Start Date */}
          <div className="mb-8">
-            <label>Is there a hard deadline for your Business Plan plan?</label>
+            <label>Is there a hard deadline for your Operational Review?</label>
             <select {...register("deadline")} type="date" className="input">
                <option value="">Select</option>
                <option value="yes">Yes</option>
@@ -161,8 +167,8 @@ const  OperationalReview = () =>
             { deadline === 'yes' && (
 
                <div>
-                  <label>What is the preferred start date?</label>
-                  <input {...register("preferredStartDate")} type="date" className="input"  />
+                  <label>Please enter hard deadline: </label>
+                  <input {...register("deadlineDate")} type="date" className="input"  />
                </div>)
             }
 
@@ -170,8 +176,8 @@ const  OperationalReview = () =>
 
          {/* Additional Information */}
          <div className="mb-8">
-            <label>Any other relevant details or specific requirements for your Business Plan
-               plan?</label>
+            <label>Any other relevant details or specific requirements for your Operational Review
+               ?</label>
             <textarea {...register("additionalDetails")} className="input"  />
          </div>
 

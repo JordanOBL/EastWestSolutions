@@ -9,23 +9,25 @@ export default function ServicesDropdown() {
 
 	return (
 		<div
-			onMouseOver={() => setDropdownOpen(true)}>
+			onMouseOver={() => setDropdownOpen(true)}
+			onMouseLeave={() => setDropdownOpen(false)}
+		className="relative">
 			{/* Clicking "Services" scrolls down */}
 			<ScrollLink
 				to="services"
 				smooth={true}
 				duration={500}
-				className="text-16 font-thin text-primary hover:text-blue-500 cursor-pointer flex ">
+				className=" text-16 font-thin text-primary hover:text-blue-500 cursor-pointer flex ">
 				<h2>Services</h2>
 							</ScrollLink>
 
 			{/* Dropdown Menu appears on hover */}
 			{dropdownOpen && (
 				<div
-					className="hidden md:absolute left-0 mt-2 w-56 bg-white border rounded-md shadow-lg z-50"
+					className="absolute w-56 bg-white border rounded-md shadow-lg z-50"
 					onMouseOver={() => setDropdownOpen(true)}
 					onMouseLeave={() => setDropdownOpen(false)}>
-					<ul className="py-2">
+					<ul className="py-2" onClick={() => setDropdownOpen(false)}>
 						<li>
 							<Link
 								href="/management-consulting"

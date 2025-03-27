@@ -31,7 +31,7 @@ function getBusinessPlanningTemplate(formData: any) {
 <p style={{color: 'black'}}>Key Business Plan Components: ${formData.keyComponents}</p>
 <p style={{color: 'black'}}>Existing Business Documentation: ${formData.businessDocumentation}</p>
 <p style={{color: 'black'}}>Deadline: ${formData.deadline}</p>
-<p style={{color: 'black'}}>Preferred Start Date: ${formData.preferredStartDate}</p>
+<p style={{color: 'black'}}>Deadline Date: ${formData.deadlineDate}</p>
 <p style={{color: 'black'}}>Additional Details: ${formData.additionalDetails}</p>
 `
     
@@ -54,7 +54,7 @@ function getLeadershipStrategyTemplate(formData: any) {
 <p style={{color: 'black'}}>Leadership Goals: ${formData.leadershipGoals}</p>
 <p style={{color: 'black'}}>Leadership Development Program In Place?: ${formData.leadershipDevelopmentProgram}</p>
 <p style={{color: 'black'}}>Deadline: ${formData.deadline}</p>
-<p style={{color: 'black'}}>Preferred Start Date: ${formData.preferredStartDate}</p>
+<p style={{color: 'black'}}>Deadline Date: ${formData.deadlineDate}</p>
 <p style={{color: 'black'}}>Additional Details: ${formData.additionalDetails}</p>`
 }
 
@@ -74,7 +74,7 @@ function getOperationalReviewTemplate(formData: any) {
 <p style={{color: 'black'}}>Primary Objectives: ${formData.primaryObjectives}</p>
 <p style={{color: 'black'}}>Currently Track Operational Performance or KPI Metrics: ${formData.kpiMetrics}</p>
 <p style={{color: 'black'}}>Deadline: ${formData.deadline}</p>
-<p style={{color: 'black'}}>Preferred Start Date: ${formData.preferredStartDate}</p>
+<p style={{color: 'black'}}>Deadline Date: ${formData.deadlineDate}</p>
 <p style={{color: 'black'}}>Additional Details: ${formData.additionalDetails}</p>`
 }
 
@@ -95,7 +95,7 @@ function getStrategyDeckTemplate(formData: any) {
 <p style={{color: 'black'}}>Additional Package Details: ${formData.additionalPackageDetails}</p>
 <p style={{color: 'black'}}>Additional Package Details Message: ${formData.additionalPackageDetailsMessage}</p>
 <p style={{color: 'black'}}>Deadline: ${formData.deadline}</p>
-<p style={{color: 'black'}}>Preferred Start Date: ${formData.preferredStartDate}</p>
+<p style={{color: 'black'}}>Deadline Date: ${formData.deadlineDate}</p>
 <p style={{color: 'black'}}>Additional Details: ${formData.additionalDetails}</p>
 `
 }
@@ -116,7 +116,7 @@ function getTeamStructureTemplate(formData: any) {
 <p style={{color: 'black'}}>Team Structure Goals: ${formData.teamStructureGoals}</p>
 <p style={{color: 'black'}}>Current Organizational Chart?: ${formData.organizationalChart}</p>
 <p style={{color: 'black'}}>Deadline: ${formData.deadline}</p>
-<p style={{color: 'black'}}>Preferred Start Date: ${formData.preferredStartDate}</p>
+<p style={{color: 'black'}}>Deadline Date: ${formData.deadlineDate}</p>
 <p style={{color: 'black'}}>Additional Details: ${formData.additionalDetails}</p>
 `
 }

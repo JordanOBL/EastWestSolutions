@@ -39,8 +39,7 @@ scope.\n
 \t Management Consulting: 2 – 4 clients, as these projects often require more in-
 depth analysis and collaboration.\n
 If my schedule is full, you may be placed on a waitlist. Your customized quote will
-include estimated project start and completion timelines. For the latest availability,
-please visit the website.`} />
+include estimated project start and completion timelines.`} />
       </section>
 
       <section className="mt-10 space-y-6 bg-secondary rounded-lg p-6">
@@ -52,8 +51,7 @@ please visit the website.`} />
 	  This is in addition to the initial draft review and first-round revisions." />
 	<FAQItem question="16. Do you guarantee job placement or business success?" answer="No, I provide strategic guidance and tailored support, but I cannot guarantee specific results. Success depends on various factors, including market conditions and individual effort." />
 	<FAQItem question="17. How many clients do you take on at a time?" answer="To maintain quality, I take on 4-6 career development clients at a time, depending on
-	  package levels. If my schedule is full, you may be placed on a waitlist. For the most up-
-	  to-date availability and timeframes, please check the website." />
+	  package levels. If my schedule is full, you may be placed on a waitlist." />
 
       </section>
 

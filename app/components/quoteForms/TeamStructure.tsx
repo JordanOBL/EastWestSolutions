@@ -7,7 +7,7 @@ import {handleSubmitQuoteForm} from '../../utils/sendEmails/handleSubmit.ts'
 
 const  TeamStructure = () =>
 { 
-   const {register, handleSubmit, formState: {errors}, watch} = useForm({
+   const {register, reset, handleSubmit, formState: {errors}, watch} = useForm({
       defaultValues: {
          fullName: '',
          email: '',
@@ -23,6 +23,7 @@ const  TeamStructure = () =>
          additionalPackageDetailsMessage: '',
          organizationalChart: '',
          deadline: '',
+         deadlineDate: '',
          additionalDetails: '',
 
       }});
@@ -30,8 +31,13 @@ const  TeamStructure = () =>
    const additionalPackageDetails = watch("additionalPackageDetails")
 
    return (
-      <form  onSubmit={handleSubmit(data => {
-         handleSubmitQuoteForm(data, 'team_structure')
+      <form  onSubmit={handleSubmit(async (data) => {
+         const response = await handleSubmitQuoteForm(data, 'team_structure')
+         if (response.status === 200) {
+            alert('Form submitted successfully!')
+            reset()
+         }
+
       })} className="p-6 m-6 md:p-10 w-full max-w-6xl mx-auto bg-white shadow-lg rounded-lg">
          <h2 className="text-3xl font-bold mb-6 text-primary">Team Structure</h2>
 
@@ -148,7 +154,7 @@ const  TeamStructure = () =>
 
          {/* Preferred Start Date */}
          <div className="mb-8">
-            <label>Is there a hard deadline for your team structure review?</label>
+            <label>Is there a hard deadline for your Team Structure review?</label>
             <select {...register("deadline")} type="date" className="input">
                <option value="">Select</option>
                <option value="yes">Yes</option>
@@ -157,8 +163,8 @@ const  TeamStructure = () =>
             { deadline === 'yes' && (
 
                <div>
-                  <label>What is the preferred start date?</label>
-                  <input {...register("preferredStartDate")} type="date" className="input"  />
+                  <label>Please enter hard deadline: </label>
+                  <input {...register("deadlineDate")} type="date" className="input"  />
                </div>)
             }
 
@@ -166,8 +172,8 @@ const  TeamStructure = () =>
 
          {/* Additional Information */}
          <div className="mb-8">
-            <label>Any other relevant details or specific requirements for your Business Plan
-               plan?</label>
+            <label>Any other relevant details or specific requirements for your Team Structure 
+               review</label>
             <textarea {...register("additionalDetails")} className="input"  />
          </div>
 

@@ -6,7 +6,7 @@ import {handleSubmitQuoteForm} from '../../utils/sendEmails/handleSubmit.ts'
 
 const  StrategyDeck = () =>
 { 
-   const {register, handleSubmit, formState: {errors}, watch} = useForm({
+   const {register, reset, handleSubmit, formState: {errors}, watch} = useForm({
       defaultValues: {
          fullName: '',
          email: '',
@@ -22,6 +22,7 @@ const  StrategyDeck = () =>
          packageInterest: '',
          additionalPackageDetails: '',
          deadline: '',
+         deadlineDate: '',
          additionalDetails: '',
 
       }});
@@ -29,8 +30,13 @@ const  StrategyDeck = () =>
    const additionalPackageDetails = watch("additionalPackageDetails")
 
    return (
-      <form  onSubmit={handleSubmit(data => {
-         handleSubmitQuoteForm(data, 'strategy_deck')
+      <form  onSubmit={handleSubmit(async (data) => {
+         const response = await handleSubmitQuoteForm(data, 'strategy_deck')
+         if (response.status === 200) {
+            alert('Form submitted successfully!')
+            reset()
+         }
+
       })} className="p-6 m-6 md:p-10 w-full max-w-6xl mx-auto bg-white shadow-lg rounded-lg">
          <h2 className="text-3xl font-bold mb-6 text-primary">Strategy Deck</h2>
 
@@ -162,8 +168,8 @@ const  StrategyDeck = () =>
             { deadline === 'yes' && (
 
                <div>
-                  <label>What is the preferred start date?</label>
-                  <input {...register("preferredStartDate")} type="date" className="input"  />
+                  <label>Please enter hard deadline: </label>
+                  <input {...register("deadlineDate")} type="date" className="input"  />
                </div>)
             }
 
@@ -171,8 +177,7 @@ const  StrategyDeck = () =>
 
          {/* Additional Information */}
          <div className="mb-8">
-            <label>Any other relevant details or specific requirements for your Strategy Deck
-               plan?</label>
+            <label>Any other relevant details or specific requirements for your Strategy Deck?</label>
             <textarea {...register("additionalDetails")} className="input"  />
          </div>
 
