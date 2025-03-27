@@ -29,7 +29,7 @@ const  BusinessPlan = () =>
 
    return (
       <form  onSubmit={handleSubmit(async (data) => {
-         const response = handleSubmitQuoteForm(data, 'business_planning')
+         const response = await handleSubmitQuoteForm(data, 'business_planning')
          if (response.status === 200) {
             alert('Form submitted successfully!')
             reset()
