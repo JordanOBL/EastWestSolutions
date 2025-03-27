@@ -25,7 +25,7 @@ const ProductSection = ({ products }: Props) =>
 						maxPrice={product.metadata.max_price || 0}
 						service={product.metadata.service}
 						tierName={product.metadata.tier_name}
-						tierNum={product.metadata.tier_num}
+						tierNum={Number(product.metadata.tier_num)}
 					/>
 				))
 			) : (
