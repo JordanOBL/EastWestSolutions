@@ -18,7 +18,7 @@ export async function POST(req: Request) {
       const receipt = checkoutSession.receipt_url
       const paymentIntent = checkoutSession.payment_intent
       // Then define and call a method to handle the successful payment intent.
-      const sendEmail = await sendOTPClientEmail(customerName, customerEmail, service, tier)
+      await sendOTPClientEmail(customerName, customerEmail, service, tier)
       subject = `New ${service} ${tier} Purchase`
 
       await sendInternalEmail(subject, customerName, customerEmail, service.split('_').join(' '), tier, checkoutSession.amount_total / 100, receipt, paymentIntent)

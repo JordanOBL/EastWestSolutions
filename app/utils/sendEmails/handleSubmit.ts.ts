@@ -1,6 +1,4 @@
 'use server'
-import {NextResponse} from 'next/server'
-import nodemailer from 'nodemailer';
 import { getInternalQuoteEmailTemplate } from '../internalQuoteEmailTemplate.ts'
 import { sendInternalQuoteEmail } from './toInternal.ts'
 import { sendRecievedQuoteClientEmail } from './toClient.ts'

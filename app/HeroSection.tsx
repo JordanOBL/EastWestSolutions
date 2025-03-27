@@ -1,13 +1,12 @@
 'use client';
 
-import { useEffect, useState } from 'react';
 
 import HeroBackground from '../public/HeroBackground.jpg'; // Fallback Image
 import HeroCTAButton from './components/HeroCTAButton';
 import Image from 'next/image';
 
 const HeroSection = () => {
-		const [isDesktop, setIsDesktop] = useState(false);
+		//const [isDesktop, setIsDesktop] = useState(false);
 
 //		// Detect screen size
 //		useEffect(() => {

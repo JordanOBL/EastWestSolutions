@@ -1,5 +1,4 @@
 'use server'
-import {NextResponse} from 'next/server'
 import nodemailer from 'nodemailer';
 import {clientOTPTemplateResponseData} from '../clientOTPTemplateResponseData'
 import path from 'path'

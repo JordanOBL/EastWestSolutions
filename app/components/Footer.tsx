@@ -1,5 +1,3 @@
-import Image from 'next/image'
-import Logo from'/public/logo/IconOnly_Transparent_NoBuffer.png'
 
 const Footer = () => {
   return (

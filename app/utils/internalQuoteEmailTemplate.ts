@@ -1,4 +1,4 @@
-export function getInternalQuoteEmailTemplate(formData: any, service: string) {
+export function getInternalQuoteEmailTemplate(formData, service: string) {
  switch (service) {
    case 'leadership_strategy':
      return getLeadershipStrategyTemplate(formData)
@@ -15,7 +15,7 @@ export function getInternalQuoteEmailTemplate(formData: any, service: string) {
  }
 }
 
-function getBusinessPlanningTemplate(formData: any) {
+function getBusinessPlanningTemplate(formData) {
   return `
 <p style={{color: 'black'}}>Full Name: ${formData.fullName}</p>
 <p style={{color: 'black'}}>Email: ${formData.email}</p>
@@ -37,7 +37,7 @@ function getBusinessPlanningTemplate(formData: any) {
     
 }
 
-function getLeadershipStrategyTemplate(formData: any) {
+function getLeadershipStrategyTemplate(formData) {
   return `
 <p style={{color: 'black'}}>Full Name: ${formData.fullName}</p>
 <p style={{color: 'black'}}>Email: ${formData.email}</p>
@@ -58,7 +58,7 @@ function getLeadershipStrategyTemplate(formData: any) {
 <p style={{color: 'black'}}>Additional Details: ${formData.additionalDetails}</p>`
 }
 
-function getOperationalReviewTemplate(formData: any) {
+function getOperationalReviewTemplate(formData) {
   return `
 <p style={{color: 'black'}}>Full Name: ${formData.fullName}</p>
 <p style={{color: 'black'}}>Email: ${formData.email}</p>
@@ -78,7 +78,7 @@ function getOperationalReviewTemplate(formData: any) {
 <p style={{color: 'black'}}>Additional Details: ${formData.additionalDetails}</p>`
 }
 
-function getStrategyDeckTemplate(formData: any) {
+function getStrategyDeckTemplate(formData) {
   return `
 <p style={{color: 'black'}}>Full Name: ${formData.fullName}</p>
 <p style={{color: 'black'}}>Email: ${formData.email}</p>
@@ -100,7 +100,7 @@ function getStrategyDeckTemplate(formData: any) {
 `
 }
 
-function getTeamStructureTemplate(formData: any) {
+function getTeamStructureTemplate(formData) {
   return `
 <p style={{color: 'black'}}>Full Name: ${formData.fullName}</p>
 <p style={{color: 'black'}}>Email: ${formData.email}</p>

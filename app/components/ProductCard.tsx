@@ -2,7 +2,6 @@
 
 import React from 'react';
 import Link from 'next/link'
-import {handlePurchase} from '../utils/api.ts'
 
 interface ProductProps {
 	id: string;
@@ -21,7 +20,6 @@ interface ProductProps {
 
 const ProductCard: React.FC<ProductProps> = ({
 	priceId,
-	name,
 	description,
 	fixedPrice,
 	minPrice,
@@ -29,7 +27,6 @@ const ProductCard: React.FC<ProductProps> = ({
 	features,
 	service,
 	tierName,
-	tierNum
 }) =>
 { 
 	async function handlePurchase() {

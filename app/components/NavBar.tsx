@@ -1,7 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import Logo from '@/public/logo/IconOnly_Transparent_NoBuffer.png'
-import MobileNav from './MobileNav';
 import ServicesDropdown from '../ServicesDropdown'; // Client Component
 export default function Navbar() {
 	return (
