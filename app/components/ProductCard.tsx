@@ -50,7 +50,7 @@ const ProductCard: React.FC<ProductProps> = ({
 	
 	return (
 		<div className="bg-white p-6 rounded-lg border-4 border-primary flex flex-col">
-			<h3 className="text-2xl text-center font-semibold font-averia text-gray-700">{tierName.toUpperCase()}</h3>
+			<h3 className="text-2xl text-center font-semibold font-averia text-gray-700">{tierName!.toUpperCase()}</h3>
 
 			<p className="text-gray-700 text-center mt-2">{description}</p>
 
