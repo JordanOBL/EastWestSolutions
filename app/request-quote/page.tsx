@@ -6,7 +6,7 @@ import StrategyDeck from '../components/quoteForms/StrategyDeck.tsx'
 import TeamStructure from '../components/quoteForms/TeamStructure.tsx'
 
 
-const RequestQuotePage = async({searchParams}) =>{
+const RequestQuotePage = async({searchParams}:{searchParams: {service: string}}) =>{
 	const {service} = await searchParams;
 
 	switch(service){
