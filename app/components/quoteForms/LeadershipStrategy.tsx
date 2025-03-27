@@ -80,7 +80,7 @@ const LeadershipStrategy = () =>
             <input {...register("industry", {required: 'Industry is required'})} type="text" className="input"  />
             <p className="text-red-500">{errors.industry?.message}</p>
             <label>Business Stage</label>
-            <select {...register("businessStage", {required: 'Business Sttage is required'})} type="number" className="input w-16"  >
+            <select {...register("businessStage", {required: 'Business Sttage is required'})}  className="input w-16"  >
                <option value="">Select</option>
                <option value="Pre-Launch">Pre-Launch</option>
                <option value="Early Growth">Early Growth</option>
@@ -160,7 +160,7 @@ const LeadershipStrategy = () =>
          {/* Preferred Start Date */}
          <div className="mb-8">
             <label>Is there a hard deadline for your leadership strategy?</label>
-            <select {...register("deadline")} type="date" className="input">
+            <select {...register("deadline")}  className="input">
                <option value="">Select</option>
                <option value="yes">Yes</option>
                <option value="no">No</option>

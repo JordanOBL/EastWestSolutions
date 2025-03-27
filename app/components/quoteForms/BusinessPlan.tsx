@@ -78,7 +78,7 @@ const  BusinessPlan = () =>
             <input {...register("industry", {required: 'Industry is required'})} type="text" className="input"  />
             <p className="text-red-500">{errors.industry?.message}</p>
             <label>Business Stage</label>
-            <select {...register("businessStage", {required: 'Business Stage is required'})} type="number" className="input w-16"  >
+            <select {...register("businessStage", {required: 'Business Stage is required'})}  className="input w-16"  >
                <option value="">Select</option>
                <option value="Pre-Launch">Pre-Launch</option>
                <option value="Early Growth">Early Growth</option>
@@ -158,7 +158,7 @@ const  BusinessPlan = () =>
          {/* Preferred Start Date */}
          <div className="mb-8">
             <label>Is there a hard deadline for your business plan?</label>
-            <select {...register("deadline")} type="date" className="input">
+            <select {...register("deadline")} className="input">
                <option value="">Select</option>
                <option value="yes">Yes</option>
                <option value="no">No</option>
