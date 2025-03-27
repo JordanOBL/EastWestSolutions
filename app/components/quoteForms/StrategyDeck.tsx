@@ -90,7 +90,7 @@ const  StrategyDeck = () =>
             {/* Business Goals */}
             <label className="text-lg font-semibold text-primary">Briefly describe your business and its key objectives:</label>
             <textarea {...register("businessKeyObjectives", {required: 'Business objectives are required', minLength: 10})} className="input"  />
-            <p className="text-red-500">{errors.businessObjectives?.message}</p>
+            <p className="text-red-500">{errors.businessKeyObjectives?.message}</p>
 
             <h3 className="text-lg font-semibold text-primary">What are the primary goals for your strategy deck?</h3>
             {[
