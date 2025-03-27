@@ -30,7 +30,7 @@ export async function POST(req: Request) {
       customerName = invoice.customer_name;
       subject = 'Invoice Payment Succeeded'
       // Then define and call a method to handle the successful payment intent.
-      await sendInternalEmail(subject, customerName, customerEmail, invoice.lines.data[0].description.split('-')[0], invoice.lines.data[0].description.split('-')[1], invoice.amount_paid / 100, null, invoice.payment_intent)
+      await sendInternalEmail(subject, customerName, customerEmail, invoice.lines.data[0].description.split('-')[0], invoice.lines.data[0].description.split('-')[1], invoice.amount_paid / 100, '', invoice.payment_intent)
       break;
     default:
       console.log(`Unhandled event type ${event.type}`);
