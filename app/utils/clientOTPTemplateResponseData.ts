@@ -238,7 +238,7 @@ the experience to your needs, please provide the following details:</p>
 <ul>
 \t<li style="color: #000000;">Your Current Resume</li>
 \t<li style="color: #000000;">Your Career Goals &amp; Areas of Improvement</li>
-\t<li style="color: #000000;">Specific Skills or Topics You Want to Develop (e.g. leadership, public speaking,
+\t<li style="color: #000000;">Specific Skills or Topics You Want to Hightlight (e.g. leadership, public speaking,
 negotiation)</li>
 \t<li style="color: #000000;">One Position-Specific Job Posting to Tailor Your Resume and Cover Letter</li>
 \t<li style="color: #000000;">LinkedIn Profile Link</li>
@@ -273,7 +273,7 @@ the experience to your needs, please provide the following details:</p>
 <ul>
 \t<li style="color: #000000;">Your Current Resume</li>
 \t<li style="color: #000000;">Your Career Goals &amp; Areas of Improvement</li>
-\t<li style="color: #000000;">Specific Skills or Topics You Want to Develop (e.g. leadership, public speaking,
+\t<li style="color: #000000;">Specific Skills or Topics You Want to Hightlight (e.g. leadership, public speaking,
 negotiation)</li>
 \t<li style="color: #000000;">Two Position-Specific Job Postings to Tailor Your Resumes and Cover Letters</li>
 \t<li style="color: #000000;">LinkedIn Profile Link + One Other Business Social Media Profile (Twitter, GitHub,
@@ -308,7 +308,7 @@ the experience to your needs, please provide the following details:</p>
 <ul>
 \t<li style="color: #000000;">Your Current Resume</li>
 \t<li style="color: #000000;">Your Career Goals &amp; Areas of Improvement</li>
-\t<li style="color: #000000;">Specific Skills or Topics You Want to Develop (e.g. leadership, public speaking,
+\t<li style="color: #000000;">Specific Skills or Topics You Want to Highlight (e.g. leadership, public speaking,
 negotiation)</li>
 \t<li style="color: #000000;">Up to Five Position-Specific Job Postings to Tailor Your Resumes and Cover
 Letters</li>
