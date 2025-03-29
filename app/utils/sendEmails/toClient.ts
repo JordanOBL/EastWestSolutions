@@ -25,7 +25,7 @@ export async function sendOTPClientEmail(clientName, clientEmail, purchasedServi
       from: 'India - EastWest Solutions <india@eastwestsolutions.us>',
       to: clientEmail,
       replyTo: 'india@eastwestsolutions.us',
-      subject: 'Action Required: Resume Information Needed',
+      subject: 'Action Required: Information Needed',
       html: `<p style={{color: 'black'}}>Hi ${clientName},</p>` + response,
       attachments: [
         {
@@ -108,7 +108,6 @@ your request, please feel free to reply to this email.</p>
         console.log('Email sent: ' + info.response);
       }
     })
-    console.log('Email sent: ' + info.response);
   } catch (error) {
     console.log(error);
   }
