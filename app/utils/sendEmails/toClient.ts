@@ -107,6 +107,7 @@ your request, please feel free to reply to this email.</p>
         console.log('Email sent: ' + info.response);
       }
     })
+    console.log('Email sent: ' + info.response);
   } catch (error) {
     console.log(error);
   }

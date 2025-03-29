@@ -229,9 +229,9 @@ completed within 3 business days after feedback.</p>
 `
 }
 
-function professionalDevelopmentBasicResponse(){
+function professionalPositioningBasicResponse(){
   return `
-<p style="color: #000000;">Thank you for choosing EastWest Solutions for your professional development needs!
+<p style="color: #000000;">Thank you for choosing EastWest Solutions for your professional positioning needs!
 My name is India, and I will be working with you to support your career growth. To tailor
 the experience to your needs, please provide the following details:</p>
 
@@ -264,9 +264,9 @@ review, each completed within 3 business days after feedback.</p>
 `
 }
 
-function professionalDevelopmentPlusResponse(){
+function professionalPositioningPlusResponse(){
   return`
-<p style="color: #000000;">Thank you for choosing EastWest Solutions for your professional development needs!
+<p style="color: #000000;">Thank you for choosing EastWest Solutions for your professional positioning needs!
 My name is India, and I will be working with you to support your career growth. To tailor
 the experience to your needs, please provide the following details:</p>
 
@@ -299,9 +299,9 @@ review, each completed within 3 business days after feedback.</p>
 `
 }
 
-function professionalDevelopmentPremiumResponse(){
+function professionalPositioningPremiumResponse(){
   return`
-<p style="color: #000000;">Thank you for choosing EastWest Solutions for your professional development needs!
+<p style="color: #000000;">Thank you for choosing EastWest Solutions for your professional positioning needs!
 My name is India, and I will be working with you to support your career growth. To tailor
 the experience to your needs, please provide the following details:</p>
 

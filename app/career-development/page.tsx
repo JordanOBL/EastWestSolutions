@@ -11,8 +11,7 @@ const CareerDevelopmentPage = async () => {
 		{ cache: 'no-store' } // Ensures fresh data (SSR equivalent)
 	);
 	const products: StripeProduct[] = await response.json();
-	console.log(products);
-	const professionalDevelopmentProducts = products.filter(product => product.metadata.service == 'professional_development')
+	const professionalPositioningProducts = products.filter(product => product.metadata.service == 'professional_positioning')
 	const resumeBuildProducts = products.filter(
 		(product) => (product.metadata.service == 'resume_build')
 	);
@@ -106,7 +105,7 @@ const CareerDevelopmentPage = async () => {
 				{/* Professional Development Section */}
 				<div className="bg-gray-100/30 text-center p-6 rounded-lg shadow">
 					<h3 className="text-2xl font-semi font-averia uppercase  text-gray-900">
-						Professional Development
+						Professional Positioning
 					</h3>
 					<p className="text-gray-700 mt-2">
 						Providing targeted career development to position you
@@ -124,7 +123,7 @@ const CareerDevelopmentPage = async () => {
 				</div>
 				{/* Pricing Table */}
 				{/* Grid Layout for Products */}
-				<ProductSection products={professionalDevelopmentProducts} />
+				<ProductSection products={professionalPositioningProducts} />
 			</div>
 		</div>
 	);

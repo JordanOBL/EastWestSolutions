@@ -10,6 +10,7 @@ export async function POST(req: Request) {
   // Handle the event
   switch (event.type) {
     case 'checkout.session.completed':
+      console.log('checkout.session.completed', event.data.object)
       const checkoutSession = event.data.object;
       customerEmail = checkoutSession.customer_details.email
       customerName = checkoutSession.customer_details.name
@@ -26,6 +27,7 @@ export async function POST(req: Request) {
     // ... handle other event types
     case 'invoice.payment_succeeded':
       const invoice = event.data.object;
+      console.log('invoice.payment_succeeded', invoice)
       customerEmail = invoice.customer_email; 
       customerName = invoice.customer_name;
       subject = 'Invoice Payment Succeeded'
