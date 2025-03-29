@@ -9,10 +9,10 @@ export const clientOTPTemplateResponseData = {
     'plus': resumeRefreshPlusResponse(), 
     'premium': resumeRefreshPremiumResponse()
   },
-  'professional_development': {
-    'basic': professionalDevelopmentBasicResponse(),
-    'plus': professionalDevelopmentPlusResponse(), 
-    'premium': professionalDevelopmentPremiumResponse()
+  'professional_positioning': {
+    'basic': professionalPositioningBasicResponse(),
+    'plus': professionalPositioningPlusResponse(), 
+    'premium': professionalPositioningPremiumResponse()
   }
 }
 function resumeBuildBasicResponse(){ return `

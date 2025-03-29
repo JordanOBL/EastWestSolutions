@@ -44,6 +44,7 @@ export async function sendOTPClientEmail(clientName, clientEmail, purchasedServi
         console.log('Email sent: ' + info.response);
       }
     })
+
   } catch (error) {
     console.log(error);
   }
