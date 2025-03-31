@@ -11,7 +11,7 @@ export function getInternalQuoteEmailTemplate(formData, service: string) {
    case 'team_structure':
      return getTeamStructureTemplate(formData)
    default:
-     return 'Service not found'
+     return {text: '', html: ''}
  }
 }
 
