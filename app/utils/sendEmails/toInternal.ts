@@ -1,7 +1,7 @@
 'use server'
 import {NextResponse} from 'next/server'
 import nodemailer from 'nodemailer';
-export async function sendInternalQuoteEmail(response: string, service: string) {
+export async function sendInternalQuoteEmail(response: {text: string, html: string}, service: string) {
   try {
     let subject
 
