@@ -129,7 +129,7 @@ const LeadershipStrategy = () =>
                </select>
                <p role="alert" className="text-red-500">{errors.additionalPackageDetailsMessage?.message}</p>
                { additionalPackageDetails === 'yes' &&
-                  <textarea {...register("additionalPackageDetailsMessage", {required: 'Additional package details are required for your selection', minLength: 10}))} className="input" />
+                  <textarea {...register("additionalPackageDetailsMessage", {required: 'Additional package details are required for your selection', minLength: 10})} className="input" />
                }
 
             </div>
