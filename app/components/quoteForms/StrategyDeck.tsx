@@ -78,9 +78,10 @@ const  StrategyDeck = () =>
          <div className="mb-8 flex flex-col grid grid-cols-1 gap-2 ">
 
             <label>Industry</label>
+            <p role="alert" className="text-red-500">{errors.industry?.message}</p>
             <input {...register("industry", {required: 'Industry is required'})} type="text" className="input"  />
-            <p className="text-red-500">{errors.industry?.message}</p>
             <label>Business Stage</label>
+            <p role="alert" className="text-red-500">{errors.businessStage?.message}</p>
             <select {...register("businessStage", {required: 'Business Stage is required'})} className="input w-16"  >
                <option value="">Select</option>
                <option value="Pre-Launch">Pre-Launch</option>
@@ -90,10 +91,14 @@ const  StrategyDeck = () =>
             </select>
             {/* Business Goals */}
             <label className="text-lg font-semibold text-primary">Briefly describe your business and its key objectives:</label>
+            <p role="alert" className="text-red-500">{errors.businessKeyObjectives?.message}</p>
             <textarea {...register("businessKeyObjectives", {required: 'Business objectives are required', minLength: 10})} className="input"  />
             <p className="text-red-500">{errors.businessKeyObjectives?.message}</p>
 
             <h3 className="text-lg font-semibold text-primary">What are the primary goals for your strategy deck?</h3>
+
+            {/* Strategy Deck Goals */}
+            <p role="alert" className="text-red-500">{errors.strategyDeckGoals?.message}</p>
             {[
                'Securing funding (loans, investors, grants)',
                'Strategic growth planning',
@@ -101,7 +106,7 @@ const  StrategyDeck = () =>
                'Market research and competitive analysis',
             ].map((goal) => (
                   <label key={goal} className="block">
-                     <input type="checkbox" {...register("strategyDeckGoals", {required: true, minLength: 1})} value={goal}  /> {goal}
+                     <input type="checkbox" {...register("strategyDeckGoals", {required: 'At least one goal is required', minLength: 1})} value={goal}  /> {goal}
                   </label>
                ))}
          </div>
@@ -110,7 +115,7 @@ const  StrategyDeck = () =>
          <div className="mb-8 flex flex-col">
             <h3 className="text-lg font-semibold text-primary">Package Selection</h3>
             <label>Select the package you are interested in:</label>
-            <p className="text-red-500">{errors.packageInterest?.message}</p>
+            <p role="alert" className="text-red-500">{errors.packageInterest?.message}</p>
             <select {...register("packageInterest", {required: 'Package is required'})} className="input" >
                <option value="">Select</option>
                <option value="basic">$600 - $1,000 (Basic)</option>
@@ -119,14 +124,15 @@ const  StrategyDeck = () =>
             </select>
 
             <label>Do you need additional customization?</label>
-            <select {...register("additionalPackageDetails")} className="input" >   
+            <p role="alert" className="text-red-500">{errors.additionalPackageDetails?.message}</p>
+            <select {...register("additionalPackageDetails", {required: 'Please select an option'})} className="input" >   
                <option value="">Select</option>
                <option value="yes">Yes</option>
                <option value="no">No</option>
             </select>
-            {errors.additionalPackageDetails?.message}
+            <p role="alert" className="text-red-500">{errors.additionalPackageDetails?.message}</p>
             { additionalPackageDetails === 'yes' &&
-               <textarea {...register("additionalPackageDetailsMessage")} className="input" />
+               <textarea {...register("additionalPackageDetailsMessage", {required: 'Adequate message is required for your selection', minLength: 10})} className="input" />
             }
 
          </div>
@@ -136,6 +142,7 @@ const  StrategyDeck = () =>
 
 
             <h3 className="text-lg font-semibold text-primary">What is the primary focus of your strategy deck? (Select all that apply)</h3>
+            <p role="alert" className="text-red-500">{errors.strategyDeckFocus?.message}</p>
             {[
                'Business Model Overview',
                'Market Positioning & Competitor Analysis',
@@ -145,12 +152,13 @@ const  StrategyDeck = () =>
                'Risk Assessment & Mitigation Strategies'
             ].map((focus) => (
                   <label key={focus} className="block">
-                     <input type="checkbox" {...register("strategyDeckFocus", {required: true, minLength: 1})} value={focus}  /> {focus}
+                     <input type="checkbox" {...register("strategyDeckFocus", {required: 'At least one focus is required', minLength: 1})} value={focus}  /> {focus}
                   </label>
                ))}
             <label>Do you have existing market research or financial data to include in the strategy
                deck?</label>
-            <select {...register("existingData")} className="input">
+            <p role="alert" className="text-red-500">{errors.existingData?.message}</p>
+            <select {...register("existingData", {required: 'Please select an option'})} className="input">
                <option value="">Select</option>
                <option value="yes">Yes</option>
                <option value="no">No</option>
@@ -163,7 +171,8 @@ const  StrategyDeck = () =>
          {/* Preferred Start Date */}
          <div className="mb-8">
             <label>Is there a hard deadline for your strategy deck?</label>
-            <select {...register("deadline")} className="input">
+            <p role="alert" className="text-red-500">{errors.deadline?.message}</p>
+            <select {...register("deadline", {required: 'Please select an option'})} className="input">
                <option value="">Select</option>
                <option value="yes">Yes</option>
                <option value="no">No</option>
@@ -172,7 +181,8 @@ const  StrategyDeck = () =>
 
                <div>
                   <label>Please enter hard deadline: </label>
-                  <input {...register("deadlineDate")} type="date" className="input"  />
+                  <p role="alert" className="text-red-500">{errors.deadlineDate?.message}</p>
+                  <input {...register("deadlineDate", {required: 'Deadline date is required for your selection'})} type="date" className="input"  />
                </div>)
             }
 

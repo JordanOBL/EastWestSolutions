@@ -77,9 +77,10 @@ const  OperationalReview = () =>
          <div className="mb-8 flex flex-col grid grid-cols-1 gap-2 ">
 
             <label>Industry</label>
-            <input {...register("industry", {required: 'Industry is required'})} type="text" className="input"  />
             <p className="text-red-500">{errors.industry?.message}</p>
+            <input {...register("industry", {required: 'Industry is required'})} type="text" className="input"  />
             <label>Business Stage</label>
+            <p className="text-red-500">{errors.businessStage?.message}</p>
             <select {...register("businessStage", {required: 'Business Stage is required'})} className="input w-16"  >
                <option value="">Select</option>
                <option value="Pre-Launch">Pre-Launch</option>
@@ -91,6 +92,7 @@ const  OperationalReview = () =>
             <div className="mb-8">
                <h3 className="text-lg font-semibold text-primary">What are the key operational challenges your business is facing? (Select all that
                   apply)</h3>
+               <p className="text-red-500">{errors.operationalChallenges?.message}</p>
                {[
                   'Workflow inefficiencies',
                   'Bottlenecks in processes',
@@ -99,7 +101,7 @@ const  OperationalReview = () =>
                   'Technology or automation gaps',
                ].map((challenge) => (
                      <label key={challenge} className="block">
-                        <input type="checkbox" {...register("operationalChallenges", {required: true, minLength: 1})} value={challenge}  /> {challenge}
+                        <input type="checkbox" {...register("operationalChallenges", {required: 'At least one challenge is required', minLength: 1})} value={challenge}  /> {challenge}
                      </label>
                   ))}
             </div>
@@ -107,6 +109,7 @@ const  OperationalReview = () =>
             {/* Package Selection */}
             <div className="mb-8 flex flex-col">
                <h3 className="text-lg font-semibold text-primary">Package Selection</h3>
+               <p role="alert" className="text-red-500">{errors.packageInterest?.message}</p>
                <label>Select the package you are interested in:</label>
                <p className="text-red-500">{errors.packageInterest?.message}</p>
                <select {...register("packageInterest", {required: 'Package is required'})} className="input" >
@@ -117,14 +120,15 @@ const  OperationalReview = () =>
                </select>
 
                <label>Do you need additional customization or services beyond the selected package?</label>
-               <select {...register("additionalPackageDetails")} className="input" >   
+               <p className="text-red-500">{errors.additionalPackageDetails?.message}</p>
+               <select {...register("additionalPackageDetails", {required: 'Please select an option'})} className="input" >   
                   <option value="">Select</option>
                   <option value="yes">Yes</option>
                   <option value="no">No</option>
                </select>
-               {errors.additionalPackageDetails?.message}
+               <p role="alert" className="text-red-500">{errors.additionalPackageDetailsMessage?.message}</p>
                { additionalPackageDetails === 'yes' &&
-                  <textarea {...register("additionalPackageDetailsMessage")} className="input" />
+                  <textarea {...register("additionalPackageDetailsMessage", {required: 'Please provide additional details'})} className="input" />
                }
 
             </div>
@@ -133,6 +137,7 @@ const  OperationalReview = () =>
             <div className="mb-8">
                <h3 className="text-lg font-semibold text-primary">What are your primary objectives for this operational review? (Select all that
                   apply)</h3>
+               <p role="alert" className="text-red-500">{errors.primaryObjectives?.message}</p>
                {[
                   'Identifying inefficiencies in processes and workflows',
                   'Improving productivity and reducing costs',
@@ -142,14 +147,15 @@ const  OperationalReview = () =>
                   'Risk mitigation and contingency planning',
                ].map((objective) => (
                      <label key={objective} className="block">
-                        <input type="checkbox" {...register("primaryObjectives", {required: true, minLength: 1})} value={objective}  /> {objective}
+                        <input type="checkbox" {...register("primaryObjectives", {required: 'At least one objective is required', minLength: 1})} value={objective}  /> {objective}
                      </label>
                   ))}
             </div>
 
             {/* Leadership Development Program */}
             <label>Do you currently track operational performance metrics or KPIs?</label>
-            <select {...register("kpiMetrics", {required: true})} className="input" >
+            <p role="alert" className="text-red-500">{errors.kpiMetrics?.message}</p>
+            <select {...register("kpiMetrics", {required: 'Please select an option'})} className="input" >
                <option value="">Select</option>
                <option value="yes">Yes</option>
                <option value="no">No</option>
@@ -161,7 +167,8 @@ const  OperationalReview = () =>
          {/* Preferred Start Date */}
          <div className="mb-8">
             <label>Is there a hard deadline for your Operational Review?</label>
-            <select {...register("deadline")} className="input">
+            <p role="alert" className="text-red-500">{errors.deadline?.message}</p>
+            <select {...register("deadline", {required: 'Please select an option'})} className="input">
                <option value="">Select</option>
                <option value="yes">Yes</option>
                <option value="no">No</option>
@@ -170,7 +177,8 @@ const  OperationalReview = () =>
 
                <div>
                   <label>Please enter hard deadline: </label>
-                  <input {...register("deadlineDate")} type="date" className="input"  />
+                  <p role="alert" className="text-red-500">{errors.deadlineDate?.message}</p>
+                  <input {...register("deadlineDate", {required: 'Deadline date is required for your selection'})} type="date" className="input"  />
                </div>)
             }
 

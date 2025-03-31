@@ -80,7 +80,8 @@ const LeadershipStrategy = () =>
             <input {...register("industry", {required: 'Industry is required'})} type="text" className="input"  />
             <p className="text-red-500">{errors.industry?.message}</p>
             <label>Business Stage</label>
-            <select {...register("businessStage", {required: 'Business Sttage is required'})}  className="input w-16"  >
+            <p role="alert" className="text-red-500">{errors.businessStage?.message}</p>
+            <select {...register("businessStage", {required: 'Business Stage is required'})}  className="input w-16"  >
                <option value="">Select</option>
                <option value="Pre-Launch">Pre-Launch</option>
                <option value="Early Growth">Early Growth</option>
@@ -88,10 +89,12 @@ const LeadershipStrategy = () =>
                <option value="Established">Established</option>
             </select>
             <label>How many members are in your leadership team?</label>
-            <input {...register("leadershipCount", {required: 'Employee count is required'})} type="number" className="input w-16"  />
+            <p role="alert" className="text-red-500">{errors.leadershipCount?.message}</p>
+            <input {...register("leadershipCount", {required: 'Leadership count is required'})} type="number" className="input w-16"  />
             {/* Leadership Challenges */}
             <div className="mb-8">
                <h3 className="text-lg font-semibold text-primary">Leadership Challenges</h3>
+               <p role="alert" className="text-red-500">{errors.leadershipChallenges?.message}</p>
                {[
                   'Lack of strategic alignment',
                   'Poor communication',
@@ -101,7 +104,7 @@ const LeadershipStrategy = () =>
                   'Lack of succession planning',
                ].map((challenge) => (
                      <label key={challenge} className="block">
-                        <input type="checkbox" {...register("leadershipChallenges", {required: true, minLength: 1})} value={challenge}  /> {challenge}
+                        <input type="checkbox" {...register("leadershipChallenges", {required: 'At least one challenge is required', minLength: 1})} value={challenge}  /> {challenge}
                      </label>
                   ))}
             </div>
@@ -118,20 +121,22 @@ const LeadershipStrategy = () =>
                   <option value="premium">$3,500 - $5,000 (Premium)</option>
                </select>
                 <label>Do you need additional customization?</label>
-               <select {...register("additionalPackageDetails")} className="input" >   
+               <p className="text-red-500">{errors.additionalPackageDetails?.message}</p>
+               <select {...register("additionalPackageDetails", {required: 'Please select one option'})} className="input" >   
                   <option value="">Select</option>
                   <option value="yes">Yes</option>
                   <option value="no">No</option>
                </select>
-               {errors.additionalPackageDetails?.message}
+               <p role="alert" className="text-red-500">{errors.additionalPackageDetailsMessage?.message}</p>
                { additionalPackageDetails === 'yes' &&
-                  <textarea {...register("additionalPackageDetailsMessage")} className="input" />
+                  <textarea {...register("additionalPackageDetailsMessage", {required: 'Additional package details are required for your selection', minLength: 10}))} className="input" />
                }
 
             </div>
 
             <div className="mb-8">
                <h3 className="text-lg font-semibold text-primary">What are the key leadership goals you want to achieve? (Select all that apply)</h3>
+               <p role="alert" className="text-red-500">{errors.leadershipGoals?.message}</p>
                {[
                   'Better leadership alignment &amp; communication',
                   'Identifying leadership gaps &amp; development opportunities',
@@ -141,14 +146,15 @@ const LeadershipStrategy = () =>
                   'Setting clear leadership performance goals',
                ].map((goal) => (
                      <label key={goal} className="block">
-                        <input type="checkbox" {...register("leadershipGoals", {required: true, minLength: 1})} value={goal}  /> {goal}
+                        <input type="checkbox" {...register("leadershipGoals", {required: 'At least one goal is required', minLength: 1})} value={goal}  /> {goal}
                      </label>
                   ))}
             </div>
 
             {/* Leadership Development Program */}
             <label>Do you currently have any leadership development programs in place?</label>
-            <select {...register("leadershipDevelopmentProgram", {required: true})} className="input" >
+            <p role="alert" className="text-red-500">{errors.leadershipDevelopmentProgram?.message}</p>
+            <select {...register("leadershipDevelopmentProgram", {required: 'Please select one option'})} className="input" >
                <option value="">Select</option>
                <option value="yes">Yes</option>
                <option value="no">No</option>
@@ -160,7 +166,8 @@ const LeadershipStrategy = () =>
          {/* Preferred Start Date */}
          <div className="mb-8">
             <label>Is there a hard deadline for your leadership strategy?</label>
-            <select {...register("deadline")}  className="input">
+            <p role="alert" className="text-red-500">{errors.deadline?.message}</p>
+            <select {...register("deadline", {required: 'Please select one option'})}  className="input">
                <option value="">Select</option>
                <option value="yes">Yes</option>
                <option value="no">No</option>
@@ -169,7 +176,8 @@ const LeadershipStrategy = () =>
 
                <div>
                   <label>Please enter hard deadline:?</label>
-                  <input {...register("deadlineDate")} type="date" className="input"  />
+                  <p role="alert" className="text-red-500">{errors.deadlineDate?.message}</p>
+                  <input {...register("deadlineDate", {required: 'Deadline is required for your selected option'})} type="date" className="input"  />
                </div>)
             }
 

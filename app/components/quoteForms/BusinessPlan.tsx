@@ -78,6 +78,7 @@ const  BusinessPlan = () =>
             <input {...register("industry", {required: 'Industry is required'})} type="text" className="input"  />
             <p className="text-red-500">{errors.industry?.message}</p>
             <label>Business Stage</label>
+            <p className="text-red-500">{errors.businessStage?.message}</p>
             <select {...register("businessStage", {required: 'Business Stage is required'})}  className="input w-16"  >
                <option value="">Select</option>
                <option value="Pre-Launch">Pre-Launch</option>
@@ -88,6 +89,7 @@ const  BusinessPlan = () =>
             {/* Business Goals */}
             <div className="mb-8">
                <h3 className="text-lg font-semibold text-primary">Business Goals (Select all that apply)</h3>
+               <p role="alert" className="text-red-500">{errors.businessGoals?.message}</p>
                {[
                   'Securing funding (loans, investors, grants)',
                   'Strategic growth planning',
@@ -95,10 +97,11 @@ const  BusinessPlan = () =>
                   'Market research and competitive analysis',
                ].map((goal) => (
                      <label key={goal} className="block">
-                        <input type="checkbox" {...register("businessGoals", {required: true, minLength: 1})} value={goal}  /> {goal}
+                        <input type="checkbox" {...register("businessGoals", {required: 'Business goals are required', minLength: 1})} value={goal}  /> {goal}
                      </label>
                   ))}
             </div>
+            
 
             {/* Package Selection */}
             <div className="mb-8 flex flex-col">
@@ -112,14 +115,15 @@ const  BusinessPlan = () =>
                   <option value="premium">$2,500 - $3,500 (Premium)</option>
                </select>
                <label>Do you need additional customization?</label>
-               <select {...register("additionalPackageDetails")} className="input" >   
+               <p className="text-red-500">{errors.additionalPackageDetails?.message}</p>
+               <select {...register("additionalPackageDetails", {required: 'Please select an option'})} className="input" >   
                   <option value="">Select</option>
                   <option value="yes">Yes</option>
                   <option value="no">No</option>
                </select>
-               {errors.additionalPackageDetails?.message}
+               <p className="text-red-500">{errors.additionalPackageDetailsMessage?.message}</p>
                { additionalPackageDetails === 'yes' &&
-                  <textarea {...register("additionalPackageDetailsMessage")} className="input" />
+                  <textarea {...register("additionalPackageDetailsMessage", { required: 'Additional customization details are required for your selection' })} className="input" />
                }
 
             </div>
@@ -128,6 +132,7 @@ const  BusinessPlan = () =>
             <div className="mb-8">
                <h3 className="text-lg font-semibold text-primary">What are the key components you want to include in your business plan? (Select
                   all that apply)</h3>
+            <p role="alert" className="text-red-500">{errors.keyComponents?.message}</p>
                {[
                   'Executive Summary',
                   'Company Description',
@@ -139,14 +144,16 @@ const  BusinessPlan = () =>
                   'Operational Plan',
                ].map((component) => (
                      <label key={component} className="block">
-                        <input type="checkbox" {...register("keyComponents", {required: true, minLength: 1})} value={component}  /> {component}
+                        <input type="checkbox" {...register("keyComponents", {required: 'At least one key component is required', minLength: 1})} value={component}  /> {component}
                      </label>
                   ))}
             </div>
 
+
             {/* Leadership Development Program */}
             <label>Do you already have any existing business documentation or research?</label>
-            <select {...register("businessDocumentation", {required: true})} className="input" >
+            <p role="alert" className="text-red-500">{errors.businessDocumentation?.message}</p>
+            <select {...register("businessDocumentation", {required: "Business Documentation is required" })} className="input" >
                <option value="">Select</option>
                <option value="yes">Yes</option>
                <option value="no">No</option>
@@ -158,7 +165,8 @@ const  BusinessPlan = () =>
          {/* Preferred Start Date */}
          <div className="mb-8">
             <label>Is there a hard deadline for your business plan?</label>
-            <select {...register("deadline")} className="input">
+            <p role="alert" className="text-red-500">{errors.deadline?.message}</p>
+            <select {...register("deadline", {required: "Plese select an option"})} className="input">
                <option value="">Select</option>
                <option value="yes">Yes</option>
                <option value="no">No</option>
@@ -167,7 +175,8 @@ const  BusinessPlan = () =>
 
                <div>
                   <label>Please enter hard deadline:</label>
-                  <input {...register("deadlineDate")} type="date" className="input"  />
+                  <p role="alert" className="text-red-500">{errors.deadlineDate?.message}</p>
+                  <input {...register("deadlineDate", {required: 'Deadline is required for the selected option'})} type="date" className="input"  />
                </div>)
             }
 

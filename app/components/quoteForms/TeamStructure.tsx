@@ -78,10 +78,11 @@ const  TeamStructure = () =>
          <div className="mb-8 flex flex-col grid grid-cols-1 gap-2 ">
 
             <label>Industry</label>
+            <p role="alert" className="text-red-500">{errors.industry?.message}</p>
             <input {...register("industry", {required: 'Industry is required'})} type="text" className="input"  />
-            <p className="text-red-500">{errors.industry?.message}</p>
             <label>Business Stage</label>
-            <select {...register("businessStage", {required: 'Business Stage is required'})}  className="input w-16"  >
+            <p role="alert" className="text-red-500">{errors.businessStage?.message}</p>
+            <select {...register("businessStage", {required: 'At least one Business Stage is required'})}  className="input w-16"  >
                <option value="">Select</option>
                <option value="Pre-Launch">Pre-Launch</option>
                <option value="Early Growth">Early Growth</option>
@@ -89,6 +90,7 @@ const  TeamStructure = () =>
                <option value="Established">Established</option>
             </select>
             <h3 className="text-lg font-semibold text-primary">What are the biggest team structure challenges your business faces?</h3>
+            <p role="alert" className="text-red-500">{errors.teamStructureChallenges?.message}</p>
             {[
                'Lack of role clarity',
                'Inefficient team structure',
@@ -96,7 +98,7 @@ const  TeamStructure = () =>
                'High turnover or retention issues',
             ].map((challenge) => (
                   <label key={challenge} className="block">
-                     <input type="checkbox" {...register("teamStructureChallenges", {required: true, minLength: 1})} value={challenge}  /> {challenge}
+                     <input type="checkbox" {...register("teamStructureChallenges", {required: 'At least one challenge is required', minLength: 1})} value={challenge}  /> {challenge}
                   </label>
                ))}
          </div>
@@ -105,7 +107,7 @@ const  TeamStructure = () =>
          <div className="mb-8 flex flex-col">
             <h3 className="text-lg font-semibold text-primary">Package Selection</h3>
             <label>Select the package you are interested in:</label>
-            <p className="text-red-500">{errors.packageInterest?.message}</p>
+            <p role="alert" className="text-red-500">{errors.packageInterest?.message}</p>
             <select {...register("packageInterest", {required: 'Package is required'})} className="input" >
                <option value="">Select</option>
                <option value="basic">$800 - $1,500 (Basic)</option>
@@ -114,14 +116,15 @@ const  TeamStructure = () =>
             </select>
 
             <label>Do you need additional customization or services beyond the selected package?</label>
-            <select {...register("additionalPackageDetails")} className="input" >   
+            <p role="alert" className="text-red-500">{errors.additionalPackageDetails?.message}</p>
+            <select {...register("additionalPackageDetails", {required: 'Please select an option'})} className="input" >   
                <option value="">Select</option>
                <option value="yes">Yes</option>
                <option value="no">No</option>
             </select>
-            {errors.additionalPackageDetails?.message}
+            <p role="alert" className="text-red-500">{errors.additionalPackageDetailsMessage?.message}</p>
             { additionalPackageDetails === 'yes' &&
-               <textarea {...register("additionalPackageDetailsMessage")} className="input" />
+               <textarea {...register("additionalPackageDetailsMessage", {required: 'Please provide additional details for your selection', minLength: 1})} className="input" />
             }
 
          </div>
@@ -132,6 +135,7 @@ const  TeamStructure = () =>
 
             <h3 className="text-lg font-semibold text-primary">What are your primary goals for team structure improvements? (Select all that
                apply)</h3>
+            <p role="alert" className="text-red-500">{errors.teamStructureGoals?.message}</p>
             {[
                'Streamlining roles and responsibilities',
                'Restructuring or realignment of teams',
@@ -140,11 +144,12 @@ const  TeamStructure = () =>
                'Developing a talent retention strategy',
             ].map((focus) => (
                   <label key={focus} className="block">
-                     <input type="checkbox" {...register("teamStructureGoals", {required: true, minLength: 1})} value={focus}  /> {focus}
+                     <input type="checkbox" {...register("teamStructureGoals", {required: 'At least one goal is required', minLength: 1})} value={focus}  /> {focus}
                   </label>
                ))}
             <label>Do you currently have an organizational chart?</label>
-            <select {...register("organizationalChart")}  className="input">
+            <p role="alert" className="text-red-500">{errors.organizationalChart?.message}</p>
+            <select {...register("organizationalChart", {required: 'Please select an option'})}  className="input">
                <option value="">Select</option>
                <option value="yes">Yes</option>
                <option value="no">No</option>
@@ -157,7 +162,8 @@ const  TeamStructure = () =>
          {/* Preferred Start Date */}
          <div className="mb-8">
             <label>Is there a hard deadline for your Team Structure review?</label>
-            <select {...register("deadline")}  className="input">
+            <p role="alert" className="text-red-500">{errors.deadline?.message}</p>
+            <select {...register("deadline", {required: 'Please select an option'})}  className="input">
                <option value="">Select</option>
                <option value="yes">Yes</option>
                <option value="no">No</option>
@@ -166,7 +172,8 @@ const  TeamStructure = () =>
 
                <div>
                   <label>Please enter hard deadline: </label>
-                  <input {...register("deadlineDate")} type="date" className="input"  />
+                  <p role="alert" className="text-red-500">{errors.deadlineDate?.message}</p>
+                  <input {...register("deadlineDate", {required: 'Deadline date is required for your selection'})} type="date" className="input"  />
                </div>)
             }
 
