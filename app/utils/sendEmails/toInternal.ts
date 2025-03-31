@@ -27,7 +27,7 @@ export async function sendInternalQuoteEmail(response: string, service: string) 
     }
 
      const transporter = nodemailer.createTransport({
-      host: "smtp-mail.outlook.com",
+      host: process.env.EMAIL_HOST,
       port: 587,
       requireTLS: true,
       secure: false,// true for port 465, false for other ports
@@ -36,17 +36,18 @@ export async function sendInternalQuoteEmail(response: string, service: string) 
         rejectUnauthorized: false,
       },
       auth: {
-        user: "india@eastwestsolutions.us",
+        user: process.env.CLIENT_EMAIL_AUTH_USER,
         pass: process.env.NODEMAILER_APP_PASS,
       },
     }); 
 
 
     const mailOptions = {
-      from: 'quotes@eastwestsolutions.us',
-      to: 'quotes@eastwestsolutions.us',
+      from: process.env.CLIENT_QUOTES_EMAIL,
+      to: process.env.CLIENT_QUOTES_EMAIL,
       subject: subject,
-      html: response,
+      text: response.text,
+      html: response.html,
     };
 
     transporter.sendMail(mailOptions, function (error, info) {
@@ -74,7 +75,7 @@ export async function sendInternalEmail(subject: string, clientName: string, cli
   try {
     
      const transporter = nodemailer.createTransport({
-      host: "smtp-mail.outlook.com",
+      host: process.env.EMAIL_HOST,
       port: 587,
       requireTLS: true,
       secure: false,// true for port 465, false for other ports
@@ -83,24 +84,43 @@ export async function sendInternalEmail(subject: string, clientName: string, cli
         rejectUnauthorized: false,
       },
       auth: {
-        user: "india@eastwestsolutions.us",
+        user: process.env.CLIENT_EMAIL_AUTH_USER,
         pass: process.env.NODEMAILER_APP_PASS,
       },
     }); 
 
 
     const mailOptions = {
-      from: 'receipts@eastwestsolutions.us',
-      to: 'receipts@eastwestsolutions.us',
+      from: process.env.CLIENT_RECEIPTS_EMAIL,
+      to: process.env.CLIENT_RECEIPTS_EMAIL,
       subject:  subject,
-      html: `<p style={{color: 'black'}}>Client Name: ${clientName}</p>
-<p style={{color: 'black'}}>Client Email: ${clientEmail}</p>
-<p style={{color: 'black'}}>Service: ${service}</p>
-<p style={{color: 'black'}}>Tier: ${tier}</p>
-<p style={{color: 'black'}}>Receipt URL: <a href="${receipt}">${receipt}</a></p>
-<p style={{color: 'black'}}>Stripe Payment Intent: ${paymentIntent}</p>
-<p style={{color: 'black'}}>Total Price: ${price}</p>
+      text: `
+Client Name: ${clientName}
+Client Email: ${clientEmail}
+Service: ${service}
+Tier: ${tier}
+Receipt URL: ${receipt}
+Stripe Payment Intent: ${paymentIntent}
+Total Price: ${price}
 `,
+      html: `
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Payment Confirmation</title>
+  </head>
+  <body style="font-family: Arial, sans-serif; color: #000000; line-height: 1.5;">
+    <p><strong>Client Name:</strong> ${clientName}</p>
+    <p><strong>Client Email:</strong> ${clientEmail}</p>
+    <p><strong>Service:</strong> ${service}</p>
+    <p><strong>Tier:</strong> ${tier}</p>
+    <p><strong>Receipt URL:</strong> <a href="${receipt}" target="_blank">${receipt}</a></p>
+    <p><strong>Stripe Payment Intent:</strong> ${paymentIntent}</p>
+    <p><strong>Total Price:</strong> ${price}</p>
+  </body>
+</html>
+`
     };
 
     transporter.sendMail(mailOptions, function (error, info) {

@@ -15,108 +15,288 @@ export function getInternalQuoteEmailTemplate(formData, service: string) {
  }
 }
 
-function getBusinessPlanningTemplate(formData) {
-  return `
-<p style={{color: 'black'}}>Full Name: ${formData.fullName}</p>
-<p style={{color: 'black'}}>Email: ${formData.email}</p>
-<p style={{color: 'black'}}>Phone: ${formData.phone}</p>
-<p style={{color: 'black'}}>Company Name: ${formData.companyName}</p>
-<p style={{color: 'black'}}>Company Website: ${formData.companyWebsite}</p>
-<p style={{color: 'black'}}>Business Industry: ${formData.industry}</p>
-<p style={{color: 'black'}}>Business Stage: ${formData.businessStage}</p>
-<p style={{color: 'black'}}>Business Goals: ${formData.businessGoals}</p>
-<p style={{color: 'black'}}>Package Interest: ${formData.packageInterest}</p>
-<p style={{color: 'black'}}>Additional Package Details: ${formData.additionalPackageDetails}</p>
-<p style={{color: 'black'}}>Additional Package Details Message: ${formData.additionalPackageDetailsMessage}</p>
-<p style={{color: 'black'}}>Key Business Plan Components: ${formData.keyComponents}</p>
-<p style={{color: 'black'}}>Existing Business Documentation: ${formData.businessDocumentation}</p>
-<p style={{color: 'black'}}>Deadline: ${formData.deadline}</p>
-<p style={{color: 'black'}}>Deadline Date: ${formData.deadlineDate}</p>
-<p style={{color: 'black'}}>Additional Details: ${formData.additionalDetails}</p>
-`
-    
+function getBusinessPlanningTemplate(formData: {
+  fullName: string;
+  email: string;
+  phone: string;
+  companyName: string;
+  companyWebsite: string;
+  industry: string;
+  businessStage: string;
+  businessGoals: string;
+  packageInterest: string;
+  additionalPackageDetails: string;
+  additionalPackageDetailsMessage: string;
+  keyComponents: string;
+  businessDocumentation: string;
+  deadline: string;
+  deadlineDate: string;
+  additionalDetails: string;
+}) {
+  const text = `
+Full Name: ${formData.fullName}
+Email: ${formData.email}
+Phone: ${formData.phone}
+Company Name: ${formData.companyName}
+Company Website: ${formData.companyWebsite}
+Business Industry: ${formData.industry}
+Business Stage: ${formData.businessStage}
+Business Goals: ${formData.businessGoals}
+Package Interest: ${formData.packageInterest}
+Additional Package Details: ${formData.additionalPackageDetails}
+Additional Package Details Message: ${formData.additionalPackageDetailsMessage}
+Key Business Plan Components: ${formData.keyComponents}
+Existing Business Documentation: ${formData.businessDocumentation}
+Deadline: ${formData.deadline}
+Deadline Date: ${formData.deadlineDate}
+Additional Details: ${formData.additionalDetails}
+`;
+
+  const html = `
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>New Quote Request</title>
+  </head>
+  <body style="font-family: Arial, sans-serif; color: #000000; line-height: 1.6;">
+    <h2 style="color: #333;">New Quote Request Received</h2>
+    <p><strong>Full Name:</strong> ${formData.fullName}</p>
+    <p><strong>Email:</strong> ${formData.email}</p>
+    <p><strong>Phone:</strong> ${formData.phone}</p>
+    <p><strong>Company Name:</strong> ${formData.companyName}</p>
+    <p><strong>Company Website:</strong> ${formData.companyWebsite}</p>
+    <p><strong>Business Industry:</strong> ${formData.industry}</p>
+    <p><strong>Business Stage:</strong> ${formData.businessStage}</p>
+    <p><strong>Business Goals:</strong> ${formData.businessGoals}</p>
+    <p><strong>Package Interest:</strong> ${formData.packageInterest}</p>
+    <p><strong>Additional Package Details:</strong> ${formData.additionalPackageDetails}</p>
+    <p><strong>Additional Package Details Message:</strong> ${formData.additionalPackageDetailsMessage}</p>
+    <p><strong>Key Business Plan Components:</strong> ${formData.keyComponents}</p>
+    <p><strong>Existing Business Documentation:</strong> ${formData.businessDocumentation}</p>
+    <p><strong>Deadline:</strong> ${formData.deadline}</p>
+    <p><strong>Deadline Date:</strong> ${formData.deadlineDate}</p>
+    <p><strong>Additional Details:</strong> ${formData.additionalDetails}</p>
+  </body>
+</html>
+`;
+
+  return { text, html };
 }
+
 
 function getLeadershipStrategyTemplate(formData) {
-  return `
-<p style={{color: 'black'}}>Full Name: ${formData.fullName}</p>
-<p style={{color: 'black'}}>Email: ${formData.email}</p>
-<p style={{color: 'black'}}>Phone: ${formData.phone}</p>
-<p style={{color: 'black'}}>Company Name: ${formData.companyName}</p>
-<p style={{color: 'black'}}>Company Website: ${formData.companyWebsite}</p>
-<p style={{color: 'black'}}>Industry: ${formData.industry}</p>
-<p style={{color: 'black'}}>Business Stage: ${formData.businessStage}</p>
-<p style={{color: 'black'}}>Leadership Team Count: ${formData.leadershipCount}</p>
-<p style={{color: 'black'}}>Leadership Challenges: ${formData.leadershipChallenges}</p>
-<p style={{color: 'black'}}>Package Interest: ${formData.packageInterest}</p>
-<p style={{color: 'black'}}>Additional Package Details: ${formData.additionalPackageDetails}</p>
-<p style={{color: 'black'}}>Additional Package Details Message: ${formData.additionalPackageDetailsMessage}</p>
-<p style={{color: 'black'}}>Leadership Goals: ${formData.leadershipGoals}</p>
-<p style={{color: 'black'}}>Leadership Development Program In Place?: ${formData.leadershipDevelopmentProgram}</p>
-<p style={{color: 'black'}}>Deadline: ${formData.deadline}</p>
-<p style={{color: 'black'}}>Deadline Date: ${formData.deadlineDate}</p>
-<p style={{color: 'black'}}>Additional Details: ${formData.additionalDetails}</p>`
+  const text = `
+Full Name: ${formData.fullName}
+Email: ${formData.email}
+Phone: ${formData.phone}
+Company Name: ${formData.companyName}
+Company Website: ${formData.companyWebsite}
+Industry: ${formData.industry}
+Business Stage: ${formData.businessStage}
+Leadership Team Count: ${formData.leadershipCount}
+Leadership Challenges: ${formData.leadershipChallenges}
+Package Interest: ${formData.packageInterest}
+Additional Package Details: ${formData.additionalPackageDetails}
+Additional Package Details Message: ${formData.additionalPackageDetailsMessage}
+Leadership Goals: ${formData.leadershipGoals}
+Leadership Development Program In Place?: ${formData.leadershipDevelopmentProgram}
+Deadline: ${formData.deadline}
+Deadline Date: ${formData.deadlineDate}
+Additional Details: ${formData.additionalDetails}
+`;
+
+  const html = `
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Leadership Strategy Submission</title>
+  </head>
+  <body style="font-family: Arial, sans-serif; color: #000000; line-height: 1.6;">
+    <h2 style="color: #333;">New Leadership Strategy Quote Request</h2>
+    <p><strong>Full Name:</strong> ${formData.fullName}</p>
+    <p><strong>Email:</strong> ${formData.email}</p>
+    <p><strong>Phone:</strong> ${formData.phone}</p>
+    <p><strong>Company Name:</strong> ${formData.companyName}</p>
+    <p><strong>Company Website:</strong> ${formData.companyWebsite}</p>
+    <p><strong>Industry:</strong> ${formData.industry}</p>
+    <p><strong>Business Stage:</strong> ${formData.businessStage}</p>
+    <p><strong>Leadership Team Count:</strong> ${formData.leadershipCount}</p>
+    <p><strong>Leadership Challenges:</strong> ${formData.leadershipChallenges}</p>
+    <p><strong>Package Interest:</strong> ${formData.packageInterest}</p>
+    <p><strong>Additional Package Details:</strong> ${formData.additionalPackageDetails}</p>
+    <p><strong>Additional Package Details Message:</strong> ${formData.additionalPackageDetailsMessage}</p>
+    <p><strong>Leadership Goals:</strong> ${formData.leadershipGoals}</p>
+    <p><strong>Leadership Development Program In Place?:</strong> ${formData.leadershipDevelopmentProgram}</p>
+    <p><strong>Deadline:</strong> ${formData.deadline}</p>
+    <p><strong>Deadline Date:</strong> ${formData.deadlineDate}</p>
+    <p><strong>Additional Details:</strong> ${formData.additionalDetails}</p>
+  </body>
+</html>
+`;
+
+  return { text, html };
 }
+
 
 function getOperationalReviewTemplate(formData) {
-  return `
-<p style={{color: 'black'}}>Full Name: ${formData.fullName}</p>
-<p style={{color: 'black'}}>Email: ${formData.email}</p>
-<p style={{color: 'black'}}>Phone: ${formData.phone}</p>
-<p style={{color: 'black'}}>Company Name: ${formData.companyName}</p>
-<p style={{color: 'black'}}>Company Website: ${formData.companyWebsite}</p>
-<p style={{color: 'black'}}>Industry: ${formData.industry}</p>
-<p style={{color: 'black'}}>Business Stage: ${formData.businessStage}</p>
-<p style={{color: 'black'}}>Operational Challenges: ${formData.operationalChallenges}</p>
-<p style={{color: 'black'}}>Package Interest: ${formData.packageInterest}</p>
-<p style={{color: 'black'}}>Additional Package Details: ${formData.additionalPackageDetails}</p>
-<p style={{color: 'black'}}>Additional Package Details Message: ${formData.additionalPackageDetailsMessage}</p>
-<p style={{color: 'black'}}>Primary Objectives: ${formData.primaryObjectives}</p>
-<p style={{color: 'black'}}>Currently Track Operational Performance or KPI Metrics: ${formData.kpiMetrics}</p>
-<p style={{color: 'black'}}>Deadline: ${formData.deadline}</p>
-<p style={{color: 'black'}}>Deadline Date: ${formData.deadlineDate}</p>
-<p style={{color: 'black'}}>Additional Details: ${formData.additionalDetails}</p>`
+  const text = `
+Full Name: ${formData.fullName}
+Email: ${formData.email}
+Phone: ${formData.phone}
+Company Name: ${formData.companyName}
+Company Website: ${formData.companyWebsite}
+Industry: ${formData.industry}
+Business Stage: ${formData.businessStage}
+Operational Challenges: ${formData.operationalChallenges}
+Package Interest: ${formData.packageInterest}
+Additional Package Details: ${formData.additionalPackageDetails}
+Additional Package Details Message: ${formData.additionalPackageDetailsMessage}
+Primary Objectives: ${formData.primaryObjectives}
+Currently Track Operational Performance or KPI Metrics: ${formData.kpiMetrics}
+Deadline: ${formData.deadline}
+Deadline Date: ${formData.deadlineDate}
+Additional Details: ${formData.additionalDetails}
+`;
+
+  const html = `
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Operational Review Quote Request</title>
+  </head>
+  <body style="font-family: Arial, sans-serif; color: #000000; line-height: 1.6;">
+    <h2 style="color: #333;">New Operational Review Quote Request</h2>
+    <p><strong>Full Name:</strong> ${formData.fullName}</p>
+    <p><strong>Email:</strong> ${formData.email}</p>
+    <p><strong>Phone:</strong> ${formData.phone}</p>
+    <p><strong>Company Name:</strong> ${formData.companyName}</p>
+    <p><strong>Company Website:</strong> ${formData.companyWebsite}</p>
+    <p><strong>Industry:</strong> ${formData.industry}</p>
+    <p><strong>Business Stage:</strong> ${formData.businessStage}</p>
+    <p><strong>Operational Challenges:</strong> ${formData.operationalChallenges}</p>
+    <p><strong>Package Interest:</strong> ${formData.packageInterest}</p>
+    <p><strong>Additional Package Details:</strong> ${formData.additionalPackageDetails}</p>
+    <p><strong>Additional Package Details Message:</strong> ${formData.additionalPackageDetailsMessage}</p>
+    <p><strong>Primary Objectives:</strong> ${formData.primaryObjectives}</p>
+    <p><strong>Currently Track Operational Performance or KPI Metrics:</strong> ${formData.kpiMetrics}</p>
+    <p><strong>Deadline:</strong> ${formData.deadline}</p>
+    <p><strong>Deadline Date:</strong> ${formData.deadlineDate}</p>
+    <p><strong>Additional Details:</strong> ${formData.additionalDetails}</p>
+  </body>
+</html>
+`;
+
+  return { text, html };
 }
+
 
 function getStrategyDeckTemplate(formData) {
-  return `
-<p style={{color: 'black'}}>Full Name: ${formData.fullName}</p>
-<p style={{color: 'black'}}>Email: ${formData.email}</p>
-<p style={{color: 'black'}}>Phone: ${formData.phone}</p>
-<p style={{color: 'black'}}>Company Name: ${formData.companyName}</p>
-<p style={{color: 'black'}}>Company Website: ${formData.companyWebsite}</p>
-<p style={{color: 'black'}}>Industry: ${formData.industry}</p>
-<p style={{color: 'black'}}>Business Stage: ${formData.businessStage}</p>
-<p style={{color: 'black'}}>Business' Key Objectives: ${formData.businessKeyObjectives}</p>
-<p style={{color: 'black'}}>Strategy Deck Goals: ${formData.strategyDeckGoals}</p>
-<p style={{color: 'black'}}>Strategy Deck Focus: ${formData.strategyDeckFocus}</p>
-<p style={{color: 'black'}}>Existing market Research or Financial Data?: ${formData.existingData}</p>
-<p style={{color: 'black'}}>Package Interest: ${formData.packageInterest}</p>
-<p style={{color: 'black'}}>Additional Package Details: ${formData.additionalPackageDetails}</p>
-<p style={{color: 'black'}}>Additional Package Details Message: ${formData.additionalPackageDetailsMessage}</p>
-<p style={{color: 'black'}}>Deadline: ${formData.deadline}</p>
-<p style={{color: 'black'}}>Deadline Date: ${formData.deadlineDate}</p>
-<p style={{color: 'black'}}>Additional Details: ${formData.additionalDetails}</p>
-`
+  const text = `
+Full Name: ${formData.fullName}
+Email: ${formData.email}
+Phone: ${formData.phone}
+Company Name: ${formData.companyName}
+Company Website: ${formData.companyWebsite}
+Industry: ${formData.industry}
+Business Stage: ${formData.businessStage}
+Business' Key Objectives: ${formData.businessKeyObjectives}
+Strategy Deck Goals: ${formData.strategyDeckGoals}
+Strategy Deck Focus: ${formData.strategyDeckFocus}
+Existing market Research or Financial Data?: ${formData.existingData}
+Package Interest: ${formData.packageInterest}
+Additional Package Details: ${formData.additionalPackageDetails}
+Additional Package Details Message: ${formData.additionalPackageDetailsMessage}
+Deadline: ${formData.deadline}
+Deadline Date: ${formData.deadlineDate}
+Additional Details: ${formData.additionalDetails}
+`;
+
+  const html = `
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Strategy Deck Quote Request</title>
+  </head>
+  <body style="font-family: Arial, sans-serif; color: #000000; line-height: 1.6;">
+    <h2 style="color: #333;">New Strategy Deck Quote Request</h2>
+    <p><strong>Full Name:</strong> ${formData.fullName}</p>
+    <p><strong>Email:</strong> ${formData.email}</p>
+    <p><strong>Phone:</strong> ${formData.phone}</p>
+    <p><strong>Company Name:</strong> ${formData.companyName}</p>
+    <p><strong>Company Website:</strong> ${formData.companyWebsite}</p>
+    <p><strong>Industry:</strong> ${formData.industry}</p>
+    <p><strong>Business Stage:</strong> ${formData.businessStage}</p>
+    <p><strong>Business' Key Objectives:</strong> ${formData.businessKeyObjectives}</p>
+    <p><strong>Strategy Deck Goals:</strong> ${formData.strategyDeckGoals}</p>
+    <p><strong>Strategy Deck Focus:</strong> ${formData.strategyDeckFocus}</p>
+    <p><strong>Existing market Research or Financial Data?:</strong> ${formData.existingData}</p>
+    <p><strong>Package Interest:</strong> ${formData.packageInterest}</p>
+    <p><strong>Additional Package Details:</strong> ${formData.additionalPackageDetails}</p>
+    <p><strong>Additional Package Details Message:</strong> ${formData.additionalPackageDetailsMessage}</p>
+    <p><strong>Deadline:</strong> ${formData.deadline}</p>
+    <p><strong>Deadline Date:</strong> ${formData.deadlineDate}</p>
+    <p><strong>Additional Details:</strong> ${formData.additionalDetails}</p>
+  </body>
+</html>
+`;
+
+  return { text, html };
 }
 
+
 function getTeamStructureTemplate(formData) {
-  return `
-<p style={{color: 'black'}}>Full Name: ${formData.fullName}</p>
-<p style={{color: 'black'}}>Email: ${formData.email}</p>
-<p style={{color: 'black'}}>Phone: ${formData.phone}</p>
-<p style={{color: 'black'}}>Company Name: ${formData.companyName}</p>
-<p style={{color: 'black'}}>Company Website: ${formData.companyWebsite}</p>
-<p style={{color: 'black'}}>Industry: ${formData.industry}</p>
-<p style={{color: 'black'}}>Business Stage: ${formData.businessStage}</p>
-<p style={{color: 'black'}}>Team Structure Callenges: ${formData.teamStructureChallenges}</p>
-<p style={{color: 'black'}}>Package Interest: ${formData.packageInterest}</p>
-<p style={{color: 'black'}}>Additional Package Details: ${formData.additionalPackageDetails}</p>
-<p style={{color: 'black'}}>Additional Package Details Message: ${formData.additionalPackageDetailsMessage}</p>
-<p style={{color: 'black'}}>Team Structure Goals: ${formData.teamStructureGoals}</p>
-<p style={{color: 'black'}}>Current Organizational Chart?: ${formData.organizationalChart}</p>
-<p style={{color: 'black'}}>Deadline: ${formData.deadline}</p>
-<p style={{color: 'black'}}>Deadline Date: ${formData.deadlineDate}</p>
-<p style={{color: 'black'}}>Additional Details: ${formData.additionalDetails}</p>
-`
+  const text = `
+Full Name: ${formData.fullName}
+Email: ${formData.email}
+Phone: ${formData.phone}
+Company Name: ${formData.companyName}
+Company Website: ${formData.companyWebsite}
+Industry: ${formData.industry}
+Business Stage: ${formData.businessStage}
+Team Structure Callenges: ${formData.teamStructureChallenges}
+Package Interest: ${formData.packageInterest}
+Additional Package Details: ${formData.additionalPackageDetails}
+Additional Package Details Message: ${formData.additionalPackageDetailsMessage}
+Team Structure Goals: ${formData.teamStructureGoals}
+Current Organizational Chart?: ${formData.organizationalChart}
+Deadline: ${formData.deadline}
+Deadline Date: ${formData.deadlineDate}
+Additional Details: ${formData.additionalDetails}
+`;
+
+  const html = `
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Team Structure Quote Request</title>
+  </head>
+  <body style="font-family: Arial, sans-serif; color: #000000; line-height: 1.6;">
+    <h2 style="color: #333;">New Team Structure Quote Request</h2>
+    <p><strong>Full Name:</strong> ${formData.fullName}</p>
+    <p><strong>Email:</strong> ${formData.email}</p>
+    <p><strong>Phone:</strong> ${formData.phone}</p>
+    <p><strong>Company Name:</strong> ${formData.companyName}</p>
+    <p><strong>Company Website:</strong> ${formData.companyWebsite}</p>
+    <p><strong>Industry:</strong> ${formData.industry}</p>
+    <p><strong>Business Stage:</strong> ${formData.businessStage}</p>
+    <p><strong>Team Structure Callenges:</strong> ${formData.teamStructureChallenges}</p>
+    <p><strong>Package Interest:</strong> ${formData.packageInterest}</p>
+    <p><strong>Additional Package Details:</strong> ${formData.additionalPackageDetails}</p>
+    <p><strong>Additional Package Details Message:</strong> ${formData.additionalPackageDetailsMessage}</p>
+    <p><strong>Team Structure Goals:</strong> ${formData.teamStructureGoals}</p>
+    <p><strong>Current Organizational Chart?:</strong> ${formData.organizationalChart}</p>
+    <p><strong>Deadline:</strong> ${formData.deadline}</p>
+    <p><strong>Deadline Date:</strong> ${formData.deadlineDate}</p>
+    <p><strong>Additional Details:</strong> ${formData.additionalDetails}</p>
+  </body>
+</html>
+`;
+
+  return { text, html };
 }
+

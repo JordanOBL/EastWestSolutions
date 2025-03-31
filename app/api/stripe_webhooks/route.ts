@@ -12,7 +12,7 @@ export async function POST(req: Request) {
     case 'checkout.session.completed':
       console.log('checkout.session.completed', event.data.object)
       const checkoutSession = event.data.object;
-      customerEmail = checkoutSession.customer_details.email
+      customerEmail = checkoutSession.customer_details.email || checkoutSession.customer_email
       customerName = checkoutSession.customer_details.name
       const tier = checkoutSession.metadata.tier
       const service = checkoutSession.metadata.service
