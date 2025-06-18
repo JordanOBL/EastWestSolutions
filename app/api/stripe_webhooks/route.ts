@@ -39,5 +39,5 @@ export async function POST(req: Request) {
   }
 
   // Return a response to acknowledge receipt of the event
-  return NextResponse.json({ recieved: true });
+  return NextResponse.json({ received: true });
 }
